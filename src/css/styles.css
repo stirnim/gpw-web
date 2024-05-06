@@ -5,6 +5,7 @@
     src: url('../fonts/ABCFavorit-Regular.woff') format('woff'); /* Older Browsers */
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
     src: url('../fonts/ABCFavorit-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -23,15 +25,15 @@ html {
 }
 
 body {
-    font-family: 'ABCFavorit', sans-serif; /* Fallback to sans-serif if custom font fails to load */
+    font-family: 'ABCFavorit', Tahoma, Verdana, Arial; /* Fallback to sans-serif if custom font fails to load */
     font-weight: normal;
     font-size: min(24px, 4vw);
     color: #D3FFB4; /* Lime text color */
     margin: 0;
     padding: 0;
+    height: 100%;
     width: 100%;
     max-width: 1440px; /* Maximum width of the content */
-    min-height: 100vh;
     margin: auto; /* Centers the body horizontally */
     position: relative; /* Necessary for positioning children elements */
     overflow-x: hidden;
@@ -327,6 +329,16 @@ h3 {
 
 /* This class has no effect by default, ensuring visibility on larger screens */
 .hide-on-mobile {}
+
+/* Limit the teaser image in height on very tall screens */
+@media (min-height: 1000px) {
+    .teaser-image {
+        height: 75vh;
+    }
+    .color-transition {
+        margin-top: 60vh;
+    }
+}
 
 /* Media query for larger screens, typically desktop devices */
 @media (min-width: 768px) {}

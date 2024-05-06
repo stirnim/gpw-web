@@ -10,3 +10,5 @@ cp ./src/manifest.json web/manifest.json
 cp ./src/images/*.* web/images/
 cp ./src/fonts/*.* web/fonts/
 cp ./src/css/*.* web/css/
+
+chmod -R o+rx web/
