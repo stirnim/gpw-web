@@ -143,6 +143,15 @@ h3 {
     color: #004B50;
 }
 
+a .button-round {
+    text-decoration: none; /* Ensures no underline appears */
+    color: inherit; /* Inherits color from the button class */
+}
+
+a:hover .button-round, a:active .button-round {
+    /* Preserve your hover and active styles */
+}
+
 .text-wide {
     padding: 50px;
     color: #004B50;
