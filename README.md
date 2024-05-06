@@ -1,5 +1,7 @@
 # Grand Prix Winterthur Teaser Page
 
+Source code of the website https://gp-winterthur.ch/
+
 ## How to Use the CSS Classes
 
 ### General Structure:
