@@ -1,15 +1,17 @@
 @font-face {
     font-family: 'ABCFavorit';
-    src: url('../fonts/ABCFavorit-Regular.woff2') format('woff2'), /* Modern Browsers */
-         url('../fonts/ABCFavorit-Regular.woff') format('woff'); /* Older Browsers */
+    /* 20240506 WOFF2 fonts have a bug for u-umlaut */
+    /* src: url('../fonts/ABCFavorit-Regular.woff2') format('woff2'), /* Modern Browsers */
+    src: url('../fonts/ABCFavorit-Regular.woff') format('woff'); /* Older Browsers */
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ABCFavorit';
-    src: url('../fonts/ABCFavorit-Bold.woff2') format('woff2'),
-         url('../fonts/ABCFavorit-Bold.woff') format('woff');
+    /* 20240506 WOFF2 fonts have a bug for u-umlaut */
+    /* src: url('../fonts/ABCFavorit-Bold.woff2') format('woff2'), */
+    src: url('../fonts/ABCFavorit-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -207,6 +209,7 @@ h3 {
     padding: 0 25px; /* 0 padding on top and bottom, 25px padding on left and right */
     display: flex;
     flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Aligns children to the start (left) of the container */
 }
 
 /* Optionally style the paragraphs within each column */
@@ -214,7 +217,19 @@ h3 {
     margin: 0 0 20px 0; /* top right bottom left */
 }
 
-.text-footer {
+/* Button specific alignment */
+.column-two .button-round {
+    align-self: flex-start; /* Only the button will align to the left */
+    margin-left: 0; /* Ensures no extra space on the left if previously centered with auto margins */
+}
+
+.footer-color-transition {
+    display: flex;       /* Enables flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center;     /* Centers content horizontally */
+    text-align: center;  /* Centers text lines within paragraphs */
+    box-sizing: border-box; /* Includes padding in the height calculation */
     background: linear-gradient(
         180deg, 
         #004B50 35%, 
@@ -225,19 +240,77 @@ h3 {
         #A6B1F1 79%, 
         #A6B1F1 100%
     );
-    padding: 20px;
-    height: auto; /* Set this to the desired height of your footer */
+    padding: 50px 50px 0 50px;
 }
 
-.text-footer .button-round {
+.footer-color-transition .button-round {
     background-color: #004B50;
     color: #D3FFB4;
 }
 
-.text-footer .button-round:hover, .text-footer .button-round:active {
+.footer-color-transition .button-round:hover, .footer-color-transition .button-round:active {
     background-color: #D3FFB4;
     color: #004B50;
 }
+
+.footer-box {
+    flex: 1; /* Takes up 1 part of the space */
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers children horizontally if there's extra space */
+    align-items: center; /* Horizontally center content within the column */
+}
+
+.footer-row {
+    padding: 0 50px;
+    display: flex; /* Ensures flexbox is used */
+    width: 100%; /* Ensures the row takes full width of its parent */
+    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    text-align: left;
+    color: #102B35;
+    font-size: 16px; /* Set font size */
+}
+
+.footer-border-box {
+    flex: 0 0 auto; /* Only take up space needed for content */
+}
+
+.footer-stretch-box {
+    flex: 1 1 auto; /* This box will grow and take up the remaining space */
+    height: 100%; /* Optional, if you want to visualize this area for debugging */
+}
+
+.sponsor-image {
+    height: auto; /* Maintains aspect ratio */
+    width: 100%; /* Allows the image to grow and shrink with the container */
+    max-width: 196px; /* Sets the maximum width based on the largest image width */
+}
+
+.gpw-logo {
+    height: auto; /* Maintains aspect ratio */
+    width: 250px; /* Sets the maximum width for the logo */
+}
+
+.footer-form {
+    min-width: 300px;
+    height: 40px;
+    background: #A6B1F1;
+    opacity: 1;
+    border: 2px solid #004B50;
+    border-radius: 4px; /* Adds a minimal radius to each corner */
+    color: #102B35; /* Set font color */
+    font-size: 16px; /* Set font size */
+    outline: none; /* Removes the default focus outline */
+    padding: 0 10px; /* Adds padding on the left and right */
+    margin: 5px 0;
+}
+
+.footer-form:focus {
+    box-shadow: 0 0 0 3px rgba(0,75,80,0.5); /* Adds a subtle glow around the field */
+    border: 2px solid #004B50; /* Keeps the border color consistent on focus */
+}
+
 
 /* Override font size for larger screens to cap it */
 @media (min-width: 1200px) {
@@ -252,10 +325,11 @@ h3 {
     }
 }
 
+/* This class has no effect by default, ensuring visibility on larger screens */
+.hide-on-mobile {}
+
 /* Media query for larger screens, typically desktop devices */
-@media (min-width: 768px) {
-    /* todo */
-}
+@media (min-width: 768px) {}
 
 /* Media query for small screens, typically mobile devices */
 @media (max-width: 768px) {
@@ -271,15 +345,27 @@ h3 {
         flex: 1 0 100%; /* Each column takes 100% of the text-area width */
         justify-content: flex-start; /* Adjust if necessary for content alignment */
     }
-    .text-footer {
-        padding: 30px 20px;
+    .footer-color-transition {
+        padding: 30px 20px 0 20px;
     }
-    .button-wide {
+    .footer-box, .footer-row {
+        padding: 20px 10px;
+        flex-direction: column;
+        justify-content: center; /* Centers children horizontally if there's extra space */
+        align-items: center; /* Horizontally center content within the column */
+    }
+    .button-round {
         height: 40px; /* Fixed height */
         line-height: 40px; /* Aligns text vertically */
         padding: 0 40px; /* Padding on left and right for text */
         font-size: 18px; /* Text size */
         font-weight: normal;
         border-radius: 20px; /* Full circle on the sides */
+    }
+    .sponsor-image, .gpw-logo {
+        max-width: 70%; /* Reduces maximum width */
+    }
+    .hide-on-mobile {
+        display: none; /* Hides the element */
     }
 }
