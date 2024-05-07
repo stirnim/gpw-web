@@ -27,3 +27,5 @@ The .text-wide class is suited for broader sections of text or elements that req
 - The footer uses classes like `.footer-color-transition`, `.footer-box`, and `.footer-row` to organize content and sponsor information attractively and accessibly.
 - Flexbox properties are heavily utilized to align and space elements dynamically based on screen size.
 
+## SVG
+- SVG images have been optimized using https://svgomg.net/

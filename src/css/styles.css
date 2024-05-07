@@ -267,6 +267,8 @@ a:hover .button-round, a:active .button-round {
     flex-direction: row;
     justify-content: center; /* Centers children horizontally if there's extra space */
     align-items: center; /* Horizontally center content within the column */
+    text-align: center;
+    flex: 1 1 auto; /* Flex grow, shrink and basis */
 }
 
 .footer-row {
@@ -287,15 +289,9 @@ a:hover .button-round, a:active .button-round {
     flex: 1 1 auto; /* This box will grow and take up the remaining space */
 }
 
-.sponsor-image {
-    height: auto; /* Maintains aspect ratio */
-    width: 100%; /* Allows the image to grow and shrink with the container */
-    max-width: 196px; /* Sets the maximum width based on the largest image width */
-}
-
-.gpw-logo {
-    height: auto; /* Maintains aspect ratio */
-    width: 250px; /* Sets the maximum width for the logo */
+.footer-image {
+    max-width: 100%; /* ensures images are not bigger than their container */
+    height: auto;    /* maintains the aspect ratio */
 }
 
 .footer-form {
@@ -371,8 +367,11 @@ a:hover .button-round, a:active .button-round {
         font-weight: normal;
         border-radius: 20px; /* Full circle on the sides */
     }
-    .sponsor-image, .gpw-logo {
-        max-width: 70%; /* Reduces maximum width */
+    .footer-border-box {
+        text-align: center; /* Horizontally center content within the column */
+    }
+    .footer-image {
+        max-width: 75%; /* Reduces maximum width */
     }
     .hide-on-mobile {
         display: none;
