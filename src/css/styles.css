@@ -1,8 +1,7 @@
 @font-face {
     font-family: 'ABCFavorit';
-    /* 20240506 WOFF2 fonts have a bug for u-umlaut */
-    /* src: url('../fonts/ABCFavorit-Regular.woff2') format('woff2'), /* Modern Browsers */
-    src: url('../fonts/ABCFavorit-Regular.woff') format('woff'); /* Older Browsers */
+    src: url('../fonts/ABCFavorit-Regular.woff2') format('woff2'), /* Modern Browsers */
+         url('../fonts/ABCFavorit-Regular.woff') format('woff'); /* Older Browsers */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -10,9 +9,8 @@
 
 @font-face {
     font-family: 'ABCFavorit';
-    /* 20240506 WOFF2 fonts have a bug for u-umlaut */
-    /* src: url('../fonts/ABCFavorit-Bold.woff2') format('woff2'), */
-    src: url('../fonts/ABCFavorit-Bold.woff') format('woff');
+    src: url('../fonts/ABCFavorit-Bold.woff2') format('woff2'),
+         url('../fonts/ABCFavorit-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
