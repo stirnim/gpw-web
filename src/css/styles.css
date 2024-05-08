@@ -337,13 +337,10 @@ a:hover .button-round, a:active .button-round {
 }
 
 /* Media query for small screens, typically mobile devices */
-@media (max-width: 430px) {
+@media (max-width: 810px) {
     h1 {
-        font-size: min(80px, 7vw);
+        font-size: min(50px, 5vw);
     }
-}
-
-@media (max-width: 768px) {
     .text-wide {
         padding: 30px 20px;
     }
@@ -381,5 +378,12 @@ a:hover .button-round, a:active .button-round {
     }
     .hide-on-mobile {
         display: none;
+    }
+}
+
+/* Media query for small screens, typically mobile phones */
+@media (max-width: 550px) {
+    h1 {
+        font-size: min(60px, 7vw);
     }
 }
