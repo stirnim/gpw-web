@@ -153,7 +153,7 @@ a { color: #D3FFB4; }
 a:hover, a:active { color: #A6B1F1; }
 
 .text-wide {
-    padding: 50px;
+    padding: 80px;
     color: #004B50;
     background-color: #D3FFB4;
     display: flex;
@@ -172,6 +172,11 @@ a:hover, a:active { color: #A6B1F1; }
 .text-wide .button-round:hover, .text-wide .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
+}
+
+.text-wide h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .text-columns {
