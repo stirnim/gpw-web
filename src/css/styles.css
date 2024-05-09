@@ -294,7 +294,14 @@ a:hover .button-round, a:active .button-round {
     height: auto;    /* maintains the aspect ratio */
 }
 
-.footer-form {
+
+.input-container {
+    display: flex;
+    flex-direction: column; /* stack elements vertically */
+    align-items: flex-start; /* align elements to the left */
+}
+
+.input-field {
     min-width: 300px;
     height: 40px;
     background: #A6B1F1;
@@ -308,7 +315,7 @@ a:hover .button-round, a:active .button-round {
     margin: 5px 0;
 }
 
-.footer-form:focus {
+.input-field:focus {
     box-shadow: 0 0 0 3px rgba(0,75,80,0.5); /* Adds a subtle glow around the field */
     border: 2px solid #004B50; /* Keeps the border color consistent on focus */
 }
@@ -361,6 +368,15 @@ a:hover .button-round, a:active .button-round {
         flex-direction: column;
         justify-content: center; /* Centers children horizontally if there's extra space */
         align-items: center; /* Horizontally center content within the column */
+    }
+    .input-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* center-align the input container */
+    }
+    .input-container label {
+        align-self: flex-start; /* align label to the start within its container */
     }
     .button-round {
         height: 40px;
