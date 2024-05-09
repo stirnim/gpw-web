@@ -5,7 +5,7 @@ rm -rf web
 mkdir -p web/images web/fonts web/css
 
 # Copy static files and assets
-cp ./src/*.html web/*.html
+cp ./src/*.html web/
 cp ./src/favicon.ico web/favicon.ico
 cp ./src/manifest.json web/manifest.json
 cp ./src/images/*.* web/images/

@@ -37,7 +37,7 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, strong {
+h1, h2, h3, h4, h5 strong {
     font-weight: bold;
     line-height: 105%;
 }
@@ -46,9 +46,9 @@ h1 {
     margin-top: 0;
     font-size: min(60px, 6vw);
 }
-h3 {
+h3, h4, h5 {
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 3px;
 }
 
 .teaser-image {
@@ -214,6 +214,7 @@ a:hover, a:active { color: #A6B1F1; }
     justify-content: center; /* Centers content horizontally */
     align-items: center;   /* Centers content vertically */
     font-size: 24px;
+    text-align: center;
     text-transform: uppercase; /* Converts text to uppercase */
     background-color: transparent; /* Ensures the inside of the circle is transparent */
 }
