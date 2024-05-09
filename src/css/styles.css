@@ -149,6 +149,9 @@ a:hover .button-round, a:active .button-round {
     /* Preserve your hover and active styles */
 }
 
+a { color: #D3FFB4; }
+a:hover, a:active { color: #A6B1F1; }
+
 .text-wide {
     padding: 50px;
     color: #004B50;
@@ -189,6 +192,9 @@ a:hover .button-round, a:active .button-round {
     background-color: #A6B1F1;
     color: #004B50;
 }
+
+.text-columns a { color: #D3FFB4; }
+.text-columns a:hover, .text-columns a:active { color: #A6B1F1; }
 
 .column-one {
     flex: 1; /* Takes up 1 part of the space */
@@ -259,6 +265,10 @@ a:hover .button-round, a:active .button-round {
     background-color: #D3FFB4;
     color: #004B50;
 }
+
+.footer-color-transition a { color: #102B35; }
+.footer-color-transition a:hover, .footer-color-transition a:active { color: #D3FFB4; }
+
 
 .footer-box {
     flex: 1;
