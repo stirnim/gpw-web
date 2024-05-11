@@ -364,6 +364,12 @@ a:hover, a:active { color: #A6B1F1; }
     h1 {
         font-size: min(50px, 5vw);
     }
+    .column-one-header {
+        width: 150px;          /* Diameter of the circle */
+        height: 150px;         /* Diameter of the circle */
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
     .text-wide {
         padding: 30px 20px;
     }
