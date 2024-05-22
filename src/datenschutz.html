@@ -75,7 +75,7 @@
         Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen, etwa über den &laquo;Austragen-Link&raquo; im Newsletter.
         </p>
         <p>
-        Der Versand der Newsletter erfolgt mittels des Versanddienstleisters 'MailChimp', The Rocket Science Group LLC d/b/a Mailchimp, Bird & Bird GDPR Representative Services UK, 12 New Fetter Lane, London, EC4A 1JP, United Kingdom. Die Datenschutzbestimmungen des Versanddienstleisters können Sie <a href="https://www.intuit.com/privacy/statement/">hier</a> einsehen. Der Versanddienstleister wird auf Grundlage unserer berechtigten Interessen gem. Art. 6 Abs. 1 lit. f DSGVO und eines Auftragsverarbeitungsvertrages gem. Art. 28 Abs. 3 S. 1 DSGVO eingesetzt.
+        Der Versand der Newsletter erfolgt mittels des Versanddienstleisters 'Brevo', Sendinblue GmbH, Köpenicker Strasse 126, 10179 Berlin. Die Datenschutzbestimmungen des Versanddienstleisters können Sie <a href="https://www.brevo.com/de/legal/privacypolicy/">hier</a> einsehen. Der Versanddienstleister wird auf Grundlage unserer berechtigten Interessen gem. Art. 6 Abs. 1 lit. f DSGVO und eines Auftragsverarbeitungsvertrages gem. Art. 28 Abs. 3 S. 1 DSGVO eingesetzt.
         </p>
         &nbsp;
         <h3>Rechte betroffener Personen</h3>
@@ -205,14 +205,20 @@
         </div>
         <div class="footer-stretch-box">&nbsp;</div>
         <div class="footer-border-box">
-            <div style="font-size: 20px; padding-bottom: 20px;">
-                <b>Bleib auf dem Laufenden!</b>
-            </div>
-            <div class="input-container">
-                <label for="mce-EMAIL">Email*</label>
-                <input type="email" name="EMAIL" class="input-field" id="mce-EMAIL" required="" placeholder="" value="" aria-required="true" aria-label="Email">
-            </div>
-            <button class="button-round">Anmelden</button>
+            <form id="sib-form" method="POST" action="https://c5ec609e.sibforms.com/serve/MUIFAN1-BNWWQuoGfwDhauKuYTOYUn-AI8rviomRFmdjN_EFAkXEV0NcFtkyAxSCwo2jgRCqS7pfBCt4RRagwnH_oSvLIbh5eG7VVyGy2D9sDNON0a2MIE21CM7R-B52cHsrZFYpZafYL_t6kJ6CTsPtJfXaHgZIz_frbJFsoAkiOqlkobpvoVEb922DaR9BBGI8PyXo6HQW7G7z?isAjax=1" target="_self">
+                <div style="font-size: 20px; padding-bottom: 20px;">
+                    <b>Bleib auf dem Laufenden!</b>
+                </div>
+                <div class="input-container">
+                    <label for="EMAIL">Email*</label>
+                    <input class="input-field" type="text" id="EMAIL" name="EMAIL" autocomplete="on" placeholder="" data-required="true" required aria-required="true" aria-label="Email"/>
+                    <input type="hidden" name="email_address_check" value="">
+                    <input type="hidden" name="locale" value="de">
+                </div>
+                <button class="button-round" form="sib-form" type="submit">Anmelden</button>
+                <div id="response-message" style="display: none; padding-top: 20px;"></div>
+            </form>
+            <script src="js/newsletter.js"></script>
         </div>
     </div>
     <div class="footer-row">

@@ -2,7 +2,7 @@
 
 # Remove the old web directory and recreate structure
 rm -rf web
-mkdir -p web/images web/fonts web/css
+mkdir -p web/images web/fonts web/css web/js
 
 # Copy static files and assets
 cp ./src/*.html web/
@@ -11,6 +11,7 @@ cp ./src/manifest.json web/manifest.json
 cp ./src/images/*.* web/images/
 cp ./src/fonts/*.* web/fonts/
 cp ./src/css/*.* web/css/
+cp ./src/js/*.* web/js/
 
 # Get current timestamp
 timestamp=$(date +%s)
