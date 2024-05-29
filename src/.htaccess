@@ -1,0 +1,5 @@
+# Enable HSTS (HTTP Strict Transport Security)
+<IfModule mod_headers.c>
+    # Enable HSTS for the next 6 months (15768000 seconds)
+    Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
+</IfModule>

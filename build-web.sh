@@ -6,6 +6,7 @@ mkdir -p web/images web/fonts web/css web/js
 
 # Copy static files and assets
 cp ./src/*.html web/
+cp ./src/.htaccess web/.htaccess
 cp ./src/favicon.ico web/favicon.ico
 cp ./src/manifest.json web/manifest.json
 cp ./src/images/*.* web/images/
