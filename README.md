@@ -1,4 +1,4 @@
-# Grand Prix Winterthur Teaser Page
+# Grand Prix Winterthur HTML Page
 
 Source code of the website https://gp-winterthur.ch/
 
