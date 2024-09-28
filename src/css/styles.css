@@ -62,7 +62,7 @@ h3, h4, h5 {
     transition: background 0.3s ease, height 0.3s ease;
     font-size: 18px;
     height: 150px;
-    overflow: hidden; /* Ensures child elements don't overflow */
+    overflow: visible; /* Allow elements to overflow */
 }
 
 /* Apply top padding to the logo */
@@ -162,6 +162,7 @@ h3, h4, h5 {
     padding: 10px 0;
     list-style: none;
     border-radius: 5px;
+    z-index: 2000; /* Ensure it's above other elements */
 }
 
 .submenu li {
