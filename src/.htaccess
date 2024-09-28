@@ -1,5 +1,14 @@
+Require valid-user
+AuthType Basic
+AuthName Stage
+AuthUserFile /home/vereinwi/.htpasswds/htpasswd.9bfa6801-94e4-4d6e-837e-69b96b89a7c1
+
+#@__HCP_END__@#
+# Anything after the comment above is left alone
+
 # Enable HSTS (HTTP Strict Transport Security)
 <IfModule mod_headers.c>
     # Enable HSTS for the next 6 months (15768000 seconds)
     Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
 </IfModule>
+
