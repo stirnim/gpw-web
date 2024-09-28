@@ -51,6 +51,174 @@ h3, h4, h5 {
     margin-bottom: 3px;
 }
 
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Stretches across the viewport */
+    z-index: 1000;
+    background: transparent; /* Keep it transparent */
+    transition: background 0.3s ease, height 0.3s ease;
+    font-size: 18px;
+    height: 150px;
+    overflow: hidden; /* Ensures child elements don't overflow */
+}
+
+/* Apply top padding to the logo */
+.navbar-logo {
+    opacity: 0; /* Keep the logo hidden initially */
+    transition: opacity 0.3s ease;
+    padding-top: 10px; /* Set the top padding */
+}
+
+.navbar-logo img {
+    height: 131px;
+    width: auto;
+}
+/* Show the logo when scrolled */
+.navbar.scrolled .navbar-logo {
+    opacity: 1; /* Makes the logo visible */
+}
+
+/* Navbar Container */
+.navbar-container {
+    max-width: 1440px; /* Matches the body content width */
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box; /* Includes padding in width */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%; /* Fills the height of the navbar */
+    position: relative; /* Needed for proper positioning */
+    background: transparent; /* Default background */
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+/* Apply the gradient when scrolled */
+.navbar.scrolled .navbar-container {
+    background: linear-gradient(
+        to top,
+        transparent 0%,
+        rgba(166, 177, 241, 0.2) 20%,
+        rgba(166, 177, 241, 0.4) 40%,
+        rgba(166, 177, 241, 0.6) 60%,
+        rgba(166, 177, 241, 0.8) 80%,
+        #A6B1F1 100%
+    );
+    justify-content: space-between; /* Adjust alignment when scrolled */
+}
+
+/* Adjust alignment when scrolled */
+.navbar.scrolled .navbar-container {
+    justify-content: space-between; /* Space between logo and menu */
+}
+
+/* Apply top padding to the navigation menu */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding-top: 30px; /* Same top padding as the logo */
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+    margin-left: 20px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 35px;
+    background-color: #004B50;
+    color: #D3FFB4;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 17.5px; /* Half of height for a full curve */
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+    /* Remove any vertical margins if present */
+    margin: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #A6B1F1;
+    color: #004B50;
+}
+
+/* Submenu Styles */
+.submenu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positions submenu below the parent */
+    left: 0;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    display: block;
+    width: 170px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #004B50;
+    color: #D3FFB4;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 17.5px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu a:hover,
+.submenu a:focus {
+    background-color: #A6B1F1;
+    color: #004B50;
+}
+
+/* Show Submenu on Hover */
+.navbar:hover .submenu {
+    display: block;
+}
+
+/* Hover Area Adjustment */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust to cover the area including submenus */
+    z-index: -1; /* Ensure the pseudo-element doesn't cover the navbar */
+}
+
+.navbar-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Extend hover area above the navbar */
+    left: -50px;
+    right: -50px;
+    bottom: -150px; /* Extend hover area below the submenus */
+    z-index: -1;
+}
+
+/* Hide Submenu when not hovering over the navbar */
+.navbar:not(:hover) .submenu {
+    display: none;
+}
+
 .teaser-image {
     position: fixed;
     top: 0;
@@ -359,10 +527,24 @@ a:hover, a:active { color: #A6B1F1; }
     }
 }
 
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 10px 20px;
+    }
+
+    .nav-link,
+    .submenu a {
+        width: 140px;
+    }
+}
+
 /* Media query for small screens, typically mobile devices */
 @media (max-width: 810px) {
     h1 {
         font-size: min(50px, 5vw);
+    }
+    .navbar-menu {
+        display: none; /* Hide the menu on smaller screens */
     }
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
