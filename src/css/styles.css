@@ -103,7 +103,7 @@ h3, h4, h5 {
     height: 100%; /* Fills the height of the navbar */
     position: relative; /* Needed for proper positioning */
     background: transparent; /* Default background */
-    transition: background 0.3s ease; /* Smooth transition */
+    transition-property: background; /* Only transition background */
 }
 
 /* Apply the gradient when scrolled */
