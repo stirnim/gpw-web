@@ -241,10 +241,10 @@ h3, h4, h5 {
     width: 170px;
     height: 35px;
     line-height: 35px;
-    background-color: #004B50;
-    color: #D3FFB4;
+    background-color: #D3FFB4;
+    color: #004B50;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 17.5px;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
