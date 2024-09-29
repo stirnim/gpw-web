@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     var navbar = document.querySelector('.navbar');
-    var submenuItems = document.querySelectorAll('.has-submenu');
+    var navItems = document.querySelectorAll('.nav-item.has-submenu');
 
+    // Function to handle scroll event
     window.addEventListener('scroll', function() {
         if (window.scrollY > 0) {
             navbar.classList.add('scrolled');
@@ -10,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Add event listeners to show/hide the extended gradient when submenu is open
-    submenuItems.forEach(function(item) {
+    // Add event listeners to show/hide the gradient when submenu is open
+    navItems.forEach(function(item) {
         item.addEventListener('mouseenter', function() {
             navbar.classList.add('submenu-open');
         });
