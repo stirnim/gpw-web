@@ -71,15 +71,19 @@ h3, h4, h5 {
     z-index: 1;
 }
 
-/* Show the logo when scrolled */
-.navbar.scrolled .navbar-logo {
-    opacity: 1; /* Makes the logo visible */
+/* Show the logo when scrolled or when submenu is open */
+.navbar.scrolled .navbar-logo,
+.navbar.submenu-open .navbar-logo {
+    opacity: 1;
 }
 
+/* Hide the logo by default */
 .navbar-logo {
-    opacity: 0; /* Keep the logo hidden initially */
+    opacity: 0;
     transition: opacity 0.3s ease;
-    padding-top: 10px; /* Set the top padding */
+    padding-top: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .navbar-logo img {
@@ -156,8 +160,9 @@ h3, h4, h5 {
 }
 
 
-/* Adjust alignment when scrolled */
-.navbar.scrolled .navbar-container {
+/* Adjust alignment when scrolled or when submenu is open */
+.navbar.scrolled .navbar-container,
+.navbar.submenu-open .navbar-container {
     justify-content: space-between; /* Space between logo and menu */
 }
 
