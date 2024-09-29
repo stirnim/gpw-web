@@ -65,6 +65,12 @@ h3, h4, h5 {
     overflow: visible; /* Allow elements to overflow */
 }
 
+/* Ensure navbar content is above the pseudo-element */
+.navbar * {
+    position: relative;
+    z-index: 1;
+}
+
 /* Show the logo when scrolled */
 .navbar.scrolled .navbar-logo {
     opacity: 1; /* Makes the logo visible */
@@ -124,14 +130,31 @@ h3, h4, h5 {
     justify-content: space-between;
 }
 
-/* Apply the submenu background gradient when submenu is open */
+/* Remove the scrolled background and apply the submenu background when submenu is open */
 .navbar.submenu-open .navbar-container {
+    background: none; /* Remove any existing background */
+}
+
+/* Apply the submenu background gradient when submenu is open */
+.navbar.submenu-open::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1440px; /* Match the content width */
+    height: 400px; /* Adjust this value to cover the height of the submenu */
     background: linear-gradient(
         to bottom,
         #D3FFB4 0%,
         transparent 100%
     );
+    z-index: -1; /* Ensure it is behind the content */
+    pointer-events: none; /* Allow interactions with elements above */
+    transition: height 0.3s ease; /* Smooth height transition */
 }
+
 
 /* Adjust alignment when scrolled */
 .navbar.scrolled .navbar-container {
