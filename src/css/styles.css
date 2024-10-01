@@ -241,8 +241,8 @@ h3, h4, h5 {
     width: 170px;
     height: 35px;
     line-height: 35px;
-    background-color: #D3FFB4;
-    color: #004B50;
+    background-color: #004B50;
+    color: #D3FFB4;
     text-decoration: none;
     font-size: 16px;
     border-radius: 17.5px;
@@ -257,14 +257,14 @@ h3, h4, h5 {
     color: #004B50;
 }
 
-/* Show Submenu on Hover */
-.nav-item.has-submenu:hover .submenu {
+/* Show all submenus when .submenu-open is added to .navbar */
+.navbar.submenu-open .submenu {
     display: block;
 }
 
-/* Hide Submenu when not hovering over the nav-item */
-.nav-item.has-submenu:not(:hover) .submenu {
-    display: none;
+/* Show all submenus when .submenu-active is added to .nav-item */
+.nav-item.has-submenu.submenu-active .submenu {
+    display: block;
 }
 
 /* Remove Hover Area Adjustments (Not needed with JavaScript solution) */
