@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var navbar = document.querySelector('.navbar');
+    var navLinksContainer = document.querySelector('.nav-links-container');
     var submenuTimeout;
 
     // Function to handle scroll event
@@ -11,25 +12,21 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Function to show all submenus
-    function showAllSubmenus() {
+    // Function to show submenus
+    function showSubmenus() {
         clearTimeout(submenuTimeout);
         navbar.classList.add('submenu-open');
     }
 
-    // Function to hide all submenus after a delay
-    function hideAllSubmenus() {
+    // Function to hide submenus
+    function hideSubmenus() {
+        clearTimeout(submenuTimeout);
         submenuTimeout = setTimeout(function() {
             navbar.classList.remove('submenu-open');
         }, 200); // Adjust the delay as needed
     }
 
-    // Add event listeners to the navbar
-    navbar.addEventListener('mouseenter', function() {
-        showAllSubmenus();
-    });
-
-    navbar.addEventListener('mouseleave', function() {
-        hideAllSubmenus();
-    });
+    // Event listeners on nav-links-container
+    navLinksContainer.addEventListener('mouseenter', showSubmenus);
+    navLinksContainer.addEventListener('mouseleave', hideSubmenus);
 });

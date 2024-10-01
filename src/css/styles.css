@@ -262,14 +262,6 @@ h3, h4, h5 {
     display: block;
 }
 
-/* Show all submenus when .submenu-active is added to .nav-item */
-.nav-item.has-submenu.submenu-active .submenu {
-    display: block;
-}
-
-/* Remove Hover Area Adjustments (Not needed with JavaScript solution) */
-/* Remove or comment out the pseudo-elements */
-
 
 .teaser-image {
     position: fixed;
