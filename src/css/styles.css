@@ -61,7 +61,6 @@ h3, h4, h5 {
     background: transparent; /* Keep it transparent */
     transition: background 0.3s ease, height 0.3s ease;
     font-size: 18px;
-    height: 150px;
     overflow: visible; /* Allow elements to overflow */
 }
 
@@ -71,16 +70,8 @@ h3, h4, h5 {
     z-index: 1;
 }
 
-/* Show the logo when scrolled or when submenu is open */
-.navbar.scrolled .navbar-logo,
-.navbar.submenu-open .navbar-logo {
-    opacity: 1;
-}
-
 /* Hide the logo by default */
 .navbar-logo {
-    opacity: 0;
-    transition: opacity 0.3s ease;
     padding-top: 10px;
     position: relative;
     margin-right: auto; /* Always keep the logo on the left */
@@ -149,7 +140,7 @@ h3, h4, h5 {
     transform: translateX(-50%);
     width: 100%;
     max-width: 1440px; /* Match the content width */
-    height: 400px; /* Adjust this value to cover the height of the submenu */
+    height: clamp(300px, 35vw, 400px); /* Responsive height */
     background: linear-gradient(
         to bottom,
         #D3FFB4 0%,
@@ -182,6 +173,8 @@ h3, h4, h5 {
 .navbar-menu {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     margin: 0;
     padding-top: 30px; /* Same top padding as the logo */
     position: relative;
@@ -190,6 +183,8 @@ h3, h4, h5 {
 
 /* Navigation Item */
 .nav-item {
+    flex: 1 1 auto; /* Allows nav items to shrink and wrap */
+    margin-left: clamp(10px, 2vw, 20px); /* Responsive margin-left */
     position: relative;
     margin-left: 20px;
 }
@@ -548,6 +543,46 @@ a:hover, a:active { color: #A6B1F1; }
     border: 2px solid #004B50; /* Keeps the border color consistent on focus */
 }
 
+/* Media Query for Viewports Between 1200px and 810px */
+@media (max-width: 1200px) and (min-width: 811px) {
+    /* Adjust the logo height responsively using clamp() */
+    .navbar-logo img {
+        height: clamp(80px, 10vw, 131px);
+    }
+
+    /* Adjust padding responsively */
+    .navbar-container {
+        padding: 0 clamp(20px, 1vw, 50px);
+    }
+
+    /* Adjust padding-top of navbar-menu */
+    .navbar-menu {
+        padding-top: clamp(20px, 2.5vw, 30px);
+    }
+
+    /* Adjust margin-left of nav-item */
+    .nav-item {
+        margin-left: clamp(10px, 2vw, 20px);
+    }
+
+    /* Adjust nav-link dimensions and font-size */
+    .nav-link {
+        width: clamp(100px, 14vw, 170px);
+        height: clamp(25px, 3vw, 35px);
+        font-size: clamp(12px, 1.3vw, 16px);
+        border-radius: calc(0.5 * clamp(25px, 3vw, 35px));
+    }
+
+    /* Adjust submenu link dimensions and font-size */
+    .submenu a {
+        width: clamp(100px, 14vw, 170px);
+        height: clamp(25px, 3vw, 35px);
+        line-height: clamp(25px, 3vw, 35px);
+        font-size: clamp(12px, 1.2vw, 14px);
+        border-radius: calc(0.5 * clamp(25px, 3vw, 35px));
+    }
+}
+
 /* Override font size for larger screens to cap it */
 @media (min-width: 1200px) {
     .date {
@@ -571,23 +606,12 @@ a:hover, a:active { color: #A6B1F1; }
     }
 }
 
-@media (max-width: 1024px) {
-    .navbar-container {
-        padding: 10px 20px;
-    }
-
-    .nav-link,
-    .submenu a {
-        width: 140px;
-    }
-}
-
 /* Media query for small screens, typically mobile devices */
 @media (max-width: 810px) {
     h1 {
         font-size: min(50px, 5vw);
     }
-    .navbar-menu {
+    .navbar-container {
         display: none; /* Hide the menu on smaller screens */
     }
     .column-one-header {
