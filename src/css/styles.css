@@ -72,9 +72,11 @@ h3, h4, h5 {
 
 /* Hide the logo by default */
 .navbar-logo {
+    flex-shrink: 0; /* Prevent the logo from shrinking too much */
     padding-top: 10px;
     position: relative;
     margin-right: auto; /* Always keep the logo on the left */
+    margin-right: 0; /* Remove any right margin */
     z-index: 2;
 }
 
