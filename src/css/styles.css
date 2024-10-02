@@ -58,10 +58,10 @@ h3, h4, h5 {
     left: 0;
     width: 100%; /* Stretches across the viewport */
     z-index: 1000;
-    background: transparent; /* Keep it transparent */
+    background: transparent;
     transition: background 0.3s ease, height 0.3s ease;
     font-size: 18px;
-    overflow: visible; /* Allow elements to overflow */
+    overflow: visible;
 }
 
 /* Ensure navbar content is above the pseudo-element */
@@ -70,13 +70,11 @@ h3, h4, h5 {
     z-index: 1;
 }
 
-/* Hide the logo by default */
 .navbar-logo {
     flex-shrink: 0; /* Prevent the logo from shrinking too much */
     padding-top: 10px;
     position: relative;
-    margin-right: auto; /* Always keep the logo on the left */
-    margin-right: 0; /* Remove any right margin */
+    margin-right: 0;
     z-index: 2;
 }
 
@@ -85,7 +83,6 @@ h3, h4, h5 {
     width: auto;
 }
 
-/* Navbar Container */
 .navbar-container {
     max-width: 1440px; /* Matches the body content width */
     margin: 0 auto;
@@ -100,29 +97,15 @@ h3, h4, h5 {
     transition-property: background; /* Only transition background */
 }
 
-/* Apply the gradient when scrolled */
-.navbar.scrolled .navbar-container {
-    background: linear-gradient(
-        to top,
-        transparent 0%,
-        rgba(166, 177, 241, 0.2) 20%,
-        rgba(166, 177, 241, 0.4) 40%,
-        rgba(166, 177, 241, 0.6) 60%,
-        rgba(166, 177, 241, 0.8) 80%,
-        #A6B1F1 100%
-    );
-    justify-content: space-between; /* Adjust alignment when scrolled */
-}
-
 /* Apply the scrolled background when scrolled and submenu is not open */
 .navbar.scrolled:not(.submenu-open) .navbar-container {
     background: linear-gradient(
         to top,
         transparent 0%,
-        rgba(166, 177, 241, 0.2) 20%,
-        rgba(166, 177, 241, 0.4) 40%,
-        rgba(166, 177, 241, 0.6) 60%,
-        rgba(166, 177, 241, 0.8) 80%,
+        rgba(166, 177, 241, 0.15) 15%,
+        rgba(166, 177, 241, 0.3) 30%,
+        rgba(166, 177, 241, 0.5) 50%,
+        rgba(166, 177, 241, 0.7) 70%,
         #A6B1F1 100%
     );
     justify-content: space-between;
@@ -144,9 +127,13 @@ h3, h4, h5 {
     max-width: 1440px; /* Match the content width */
     height: clamp(300px, 35vw, 400px); /* Responsive height */
     background: linear-gradient(
-        to bottom,
-        #D3FFB4 0%,
-        transparent 100%
+        to top,
+        transparent 0%,
+        rgba(211, 255, 180, 0.15) 15%,
+        rgba(211, 255, 180, 0.3) 30%,
+        rgba(211, 255, 180, 0.5) 50%,
+        rgba(211, 255, 180, 0.7) 70%,
+        #D3FFB4 100%
     );
     z-index: -1; /* Ensure it is behind the content */
     pointer-events: none; /* Allow interactions with elements above */
