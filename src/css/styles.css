@@ -51,6 +51,7 @@ h3, h4, h5 {
     margin-bottom: 3px;
 }
 
+/*****************/
 /* Navbar Styles */
 .navbar {
     position: fixed;
@@ -68,6 +69,10 @@ h3, h4, h5 {
 .navbar * {
     position: relative;
     z-index: 1;
+}
+
+.navbar-top {
+    display: flex;
 }
 
 .navbar-logo {
@@ -246,7 +251,23 @@ h3, h4, h5 {
     display: block;
 }
 
+/* Hide the mobile footer content by default */
+.mobile-footer {
+    display: none;
+}
 
+.mobile-menu-icon {
+    display: none; /* Hidden by default on desktop */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/******************/
+/* Content Styles */
 .teaser-image {
     position: fixed;
     top: 0;
@@ -597,11 +618,114 @@ a:hover, a:active { color: #A6B1F1; }
 
 /* Media query for small screens, typically mobile devices */
 @media (max-width: 810px) {
+    /*********************/
+    /* Mobile Navigation */
+    .navbar-container {
+        padding: 0 20px;
+    }
+
+    .navbar-top {
+        display: flex; /* Establish flex container */
+        flex-direction: row; /* Align children horizontally */
+        justify-content: space-between; /* Space between logo and icon */
+        align-items: center; /* Vertically center the items */
+        width: 100%; /* Stretch to full width */
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .navbar-logo img {
+        height: 80px; /* Adjust as necessary */
+        width: auto;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        width: 30px; /* Consistent width */
+        height: 30px; /* Consistent height */
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        background-image: url('../images/hamburger_icon_darkforest.svg'); /* Default hamburger icon */
+        transition: background-image 0.3s ease; /* Smooth transition */
+    }
+
+    .navbar.mobile-nav-active .mobile-menu-icon {
+        background-image: url('../images/close_icon_darkforest.svg'); /* Close icon */
+    }
+
+    .navbar.mobile-nav-active.scrolled .navbar-container {
+        background: linear-gradient(to bottom, #D3FFB4 0%, #004B50 100%);
+    }
+
+    .navbar.mobile-nav-active .navbar-container {
+        flex-direction: column; /* Stack elements vertically */
+        height: 100vh; /* Full viewport height */
+        background: linear-gradient(to bottom, #D3FFB4 0%, #004B50 100%);
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    .nav-links-container {
+        display: none;
+    }
+
+    .navbar.mobile-nav-active .nav-links-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        flex-grow: 1;
+        padding: 20px 0;
+    }
+
+    .navbar.mobile-nav-active .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-link {
+        margin: 10px 0;
+    }
+
+    .navbar.mobile-nav-active .submenu {
+        position: static;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar.mobile-nav-active .nav-item.has-submenu.mobile-submenu-active .submenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-footer {
+        display: none;
+    }
+
+    .navbar.mobile-nav-active .mobile-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        width: 100%;
+        background: transparent;
+    }
+
+    body.mobile-nav-active {
+        overflow: hidden;
+    }
+
+    /*******************/
+    /* Content Styling */
     h1 {
         font-size: min(50px, 5vw);
-    }
-    .navbar-container {
-        display: none; /* Hide the menu on smaller screens */
     }
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
