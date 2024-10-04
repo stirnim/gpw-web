@@ -662,7 +662,8 @@ a:hover, a:active { color: #A6B1F1; }
 
     .navbar.mobile-nav-active .navbar-container {
         flex-direction: column; /* Stack elements vertically */
-        height: 100vh; /* Full viewport height */
+        height: 100vh; /* Fallback */
+        height: 100dvh;
         background: linear-gradient(to bottom, #D3FFB4 0%, #004B50 100%);
         justify-content: flex-start;
         overflow-y: auto;
