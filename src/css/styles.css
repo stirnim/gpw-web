@@ -73,6 +73,7 @@ h3, h4, h5 {
 
 .navbar-top {
     display: flex;
+    padding-bottom: 50px;
 }
 
 .navbar-logo {
@@ -102,8 +103,12 @@ h3, h4, h5 {
     transition-property: background; /* Only transition background */
 }
 
-/* Apply the scrolled background when scrolled and submenu is not open */
-.navbar.scrolled:not(.submenu-open) .navbar-container {
+/* Navbar Background
+   use: .navbar.scrolled:not(.submenu-open) .navbar-container
+        if you want the navbar background only during scrolling but not on the top
+   use: .navbar .navbar-container
+        if you want the navbar background always on */        
+.navbar .navbar-container {
     background: linear-gradient(
         to top,
         transparent 0%,
@@ -258,8 +263,8 @@ h3, h4, h5 {
 
 .mobile-menu-icon {
     display: none; /* Hidden by default on desktop */
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     background-size: contain;
     background-repeat: no-repeat;
@@ -642,8 +647,6 @@ a:hover, a:active { color: #A6B1F1; }
     .mobile-menu-icon {
         display: block;
         margin-top: 20px;
-        width: 30px; /* Consistent width */
-        height: 30px; /* Consistent height */
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
