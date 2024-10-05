@@ -572,7 +572,7 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 .footer-row {
-    padding: 0 50px;
+    padding: 20px 50px;
     display: flex;
     width: 100%; /* Ensures the row takes full width of its parent */
     align-items: flex-start; /* Aligns children to the start (left) of the container */
@@ -594,6 +594,13 @@ a:hover, a:active { color: #A6B1F1; }
     height: auto;    /* maintains the aspect ratio */
 }
 
+.social-media {
+    margin: 10px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
 
 .input-container {
     display: flex;
@@ -839,14 +846,6 @@ a:hover, a:active { color: #A6B1F1; }
     .mobile-footer a {
         font-size: 16px;
         text-decoration: none;
-    }
-
-    .social-media {
-        margin: 10px 0;
-    }
-
-    .social-media a {
-        margin: 0 10px;
     }
 
     body.mobile-nav-active {
