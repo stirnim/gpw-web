@@ -376,6 +376,15 @@ a:hover .button-round, a:active .button-round {
 a { color: #D3FFB4; }
 a:hover, a:active { color: #A6B1F1; }
 
+.header-wide {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 70px 0px 70px;
+    color: #D3FFB4;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    background: #004B50;
+}
+
 .text-wide {
     padding: 80px;
     color: #004B50;
@@ -398,32 +407,46 @@ a:hover, a:active { color: #A6B1F1; }
     color: #004B50;
 }
 
-.text-wide h1 {
+.text-wide h1, .header-wide h1 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.text-columns {
+/* image-columns is similar to text-columns but elements can
+   wrap and have a fixed gap and are centered */
+.image-columns {
     display: flex;
-    flex-direction: row; /* Default direction is row */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
     padding: 50px 70px;
     color: #D3FFB4;
     box-sizing: border-box; /* Ensures padding is included in width calculation */
-    background: #004B50; /* Assuming a continuation of your color scheme */
+    background: #004B50;
 }
 
-.text-columns .button-round {
+.text-columns {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 70px;
+    color: #D3FFB4;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    background: #004B50;
+}
+
+.text-columns .button-round, .image-columns .button-round{
     background-color: #D3FFB4;
     color: #004B50;
 }
 
-.text-columns .button-round:hover, .text-columns .button-round:active {
+.text-columns .button-round:hover, .text-columns .button-round:active , .image-columns.button-round:hover, .image-columns.button-round:active{
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-columns a { color: #D3FFB4; }
-.text-columns a:hover, .text-columns a:active { color: #A6B1F1; }
+.text-columns a, .image-columns a { color: #D3FFB4; }
+.text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active { color: #A6B1F1; }
 
 .column-one {
     flex: 1; /* Takes up 1 part of the space */
@@ -431,6 +454,34 @@ a:hover, a:active { color: #A6B1F1; }
     display: flex;
     flex-direction: column; /* Stacks children vertically */
     align-items: center; /* Horizontally center content within the column */
+}
+
+/* Override flex behavior for column-one within image-columns to prevent excessive spacing */
+.image-columns .column-one {
+    flex: 0 0 auto; /* Prevents the column from growing or shrinking */
+}
+
+.column-one-image {
+    width: 100%;
+    height: 450px;
+    width: 300px;
+    background-size: cover; /* Ensures the background image covers the entire div */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    position: relative;
+    overflow: hidden; /* Ensures child elements don't overflow the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stacks child elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+    justify-content: center; /* Centers child elements vertically */
+    box-sizing: border-box; /* Ensures padding is included in the total size */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background to improve text visibility */
+}
+
+/* Hover effect for the column-one-image */
+.image-columns .column-one-image:hover {
+    transform: scale(1.02);
 }
 
 .column-one-header {
@@ -445,7 +496,7 @@ a:hover, a:active { color: #A6B1F1; }
     font-size: 24px;
     text-align: center;
     text-transform: uppercase; /* Converts text to uppercase */
-    background-color: transparent; /* Ensures the inside of the circle is transparent */
+    background-color: #004B50;
 }
 
 .column-two {
@@ -558,6 +609,38 @@ a:hover, a:active { color: #A6B1F1; }
 .input-field:focus {
     box-shadow: 0 0 0 3px rgba(0,75,80,0.5); /* Adds a subtle glow around the field */
     border: 2px solid #004B50; /* Keeps the border color consistent on focus */
+}
+
+
+@media (max-width: 1380px) and (min-width: 811px) {
+    .column-one-header {
+        width: 150px;          /* Diameter of the circle */
+        height: 150px;         /* Diameter of the circle */
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .column-one-image {
+        height: 400px;
+        width: 260px;
+    }
+    .header-wide {
+        padding: 30px 20px 0px 20px;
+    }
+    .text-wide, .text-columns, .image-columns {
+        padding: 30px 20px;
+    }
+    .column-one {
+        padding: 10px 0;
+    }
+    .column-two {
+        padding: 10px 10px;
+    }
+    .footer-color-transition {
+        padding: 30px 20px 0 20px;
+    }
+    .footer-box, .footer-row {
+        padding: 20px 10px;
+    }
 }
 
 /* Media Query for Viewports Between 1200px and 810px */
@@ -766,23 +849,38 @@ a:hover, a:active { color: #A6B1F1; }
     h1 {
         font-size: min(50px, 5vw);
     }
+    .column-one-image {
+        height: 300px;
+        width: 300px;
+    }
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
         height: 150px;         /* Diameter of the circle */
         font-size: 20px;
         margin-bottom: 10px;
     }
+    .header-wide {
+        padding: 30px 20px 0px 20px;
+    }
     .text-wide {
         padding: 30px 20px;
     }
-    .text-columns {
+    .image-columns {
+        align-items: center;
+    }
+    .text-columns, .image-columns {
         padding: 30px 20px;
         flex-direction: column; /* Stack columns vertically */
     }
-    .column-one, .column-two {
+    .column-one {
+        padding: 10px 0;
+        flex: 1 0 100%; /* Each column takes 100% of the text-area width */
+        justify-content: flex-start;
+    }
+    .column-two {
         padding: 10px 10px;
         flex: 1 0 100%; /* Each column takes 100% of the text-area width */
-        justify-content: flex-start; /* Adjust if necessary for content alignment */
+        justify-content: flex-start;
     }
     .footer-color-transition {
         padding: 30px 20px 0 20px;
