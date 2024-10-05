@@ -435,18 +435,18 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
-.text-columns .button-round, .image-columns .button-round{
+.text-columns .button-round, .image-columns .button-round, .footer-color-transition .lime .button-round {
     background-color: #D3FFB4;
     color: #004B50;
 }
 
-.text-columns .button-round:hover, .text-columns .button-round:active , .image-columns.button-round:hover, .image-columns.button-round:active{
+.text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .footer-color-transition .lime .button-round:hover, .footer-color-transition .lime .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-columns a, .image-columns a { color: #D3FFB4; }
-.text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active { color: #A6B1F1; }
+.text-columns a, .image-columns a, .footer-color-transition .lime a { color: #D3FFB4; }
+.text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .footer-color-transition .lime a:hover, .footer-color-transition .lime a:active { color: #A6B1F1; }
 
 .column-one {
     flex: 1; /* Takes up 1 part of the space */
@@ -556,7 +556,7 @@ a:hover, a:active { color: #A6B1F1; }
     color: #004B50;
 }
 
-.footer-color-transition a { color: #102B35; }
+.footer-color-transition a { color: #004B50; text-decoration: none; }
 .footer-color-transition a:hover, .footer-color-transition a:active { color: #D3FFB4; }
 
 
@@ -577,7 +577,7 @@ a:hover, a:active { color: #A6B1F1; }
     width: 100%; /* Ensures the row takes full width of its parent */
     align-items: flex-start; /* Aligns children to the start (left) of the container */
     text-align: left;
-    color: #102B35;
+    color: #004B50;
     font-size: 16px;
 }
 
