@@ -461,6 +461,11 @@ a:hover, a:active { color: #A6B1F1; }
     flex: 0 0 auto; /* Prevents the column from growing or shrinking */
 }
 
+/* Overrride button margin within image-columns to prevent excessive spacing */
+.image-columns .button-round {
+    margin: 10px auto 0;
+}
+
 .column-one-image {
     width: 100%;
     height: 450px;
@@ -851,7 +856,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
     .column-one-image {
         height: 300px;
-        width: 300px;
+        width: 260px;
     }
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
@@ -866,9 +871,10 @@ a:hover, a:active { color: #A6B1F1; }
         padding: 30px 20px;
     }
     .image-columns {
+        padding: 30px 20px;
         align-items: center;
     }
-    .text-columns, .image-columns {
+    .text-columns {
         padding: 30px 20px;
         flex-direction: column; /* Stack columns vertically */
     }
