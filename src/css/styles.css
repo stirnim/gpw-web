@@ -485,8 +485,12 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 /* Hover effect for the column-one-image */
+.image-columns .column-one-image {
+    /* Existing styles */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
 .image-columns .column-one-image:hover {
-    transform: scale(1.02);
+    box-shadow: 0 0 20px 5px rgba(166, 177, 241, 0.7); /* Adjust color and size as needed */
 }
 
 .column-one-header {
@@ -626,7 +630,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
     .column-one-image {
         height: 400px;
-        width: 260px;
+        width: 300px;
     }
     .header-wide {
         padding: 30px 20px 0px 20px;
@@ -856,7 +860,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
     .column-one-image {
         height: 300px;
-        width: 260px;
+        width: 300px;
     }
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
