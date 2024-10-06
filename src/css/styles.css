@@ -505,18 +505,18 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
-.text-wide .button-round, .text-columns .button-round, .image-columns .button-round, .footer-color-transition .lime .button-round {
+.text-wide .button-round, .text-columns .button-round, .image-columns .button-round, .footer-color-transition .lime .button-round , .accordion-section .button-round {
     background-color: #D3FFB4;
     color: #004B50;
 }
 
-.text-wide .button-round:hover, .text-wide .button-round:active, .text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .footer-color-transition .lime .button-round:hover, .footer-color-transition .lime .button-round:active {
+.text-wide .button-round:hover, .text-wide .button-round:active, .text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .footer-color-transition .lime .button-round:hover, .footer-color-transition .lime .button-round:active, .accordion-section .button-round:hover, .accordion-section .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-wide a, .text-columns a, .image-columns a, .footer-color-transition .lime a { color: #D3FFB4; }
-.text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .footer-color-transition .lime a:hover, .footer-color-transition .lime a:active { color: #A6B1F1; }
+.text-wide a, .text-columns a, .image-columns a, .footer-color-transition .lime a, .accordion-section a { color: #D3FFB4; }
+.text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .footer-color-transition .lime a:hover, .footer-color-transition .lime a:active, .accordion-section a:hover, .accordion-section a:active { color: #A6B1F1; }
 
 /* Takes up all of the width space */
 .column-wide {
@@ -601,9 +601,94 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 /* Button specific alignment */
-.column-two .button-round {
+.column-two .button-round, .accordion-section .button-round {
     align-self: flex-start; /* Only the button will align to the left */
     margin-left: 0; /* Ensures no extra space on the left if previously centered with auto margins */
+}
+
+/* Styles for the accordion sections */
+.accordion-section .accordion-icon-column {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accordion-section .accordion-icon {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    border: 5px solid #A6B1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #004B50; /* Default background */
+    color: #D3FFB4; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-section.expanded .accordion-icon {
+    background-color: #D3FFB4; /* Lime color when expanded */
+    color: #004B50; /* Dark forest text color */
+}
+
+.accordion-section .accordion-content-column {
+    flex: 3;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.accordion-section .accordion-brief {
+    margin-bottom: 20px;
+}
+
+/* Base styles for collapsed state */
+.accordion-full-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Styles for expanded state */
+.accordion-section.expanded .accordion-full-content {
+    max-height: none; /* Adjust as needed */
+    opacity: 1;
+}
+
+.accordion-section .accordion-full-content {
+    display: none; /* Hidden by default */
+}
+
+.accordion-section.expanded .accordion-full-content {
+    display: block; /* Shown when expanded */
+}
+
+.accordion-section .accordion-content-column h1 {
+    margin-top: 0;
+}
+
+.accordion-section .accordion-content-column p {
+    margin: 0 0 20px 0;
+}
+
+.accordion-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Optional: Adjust the spacing between buttons */
+    margin-top: 10px; /* Adjust as needed for spacing above buttons */
+}
+
+.accordion-buttons .button-round {
+    width: auto;
+    margin: 5px auto; /* Centers the button horizontally */
 }
 
 .footer-color-transition {
@@ -996,6 +1081,10 @@ a:hover, a:active { color: #A6B1F1; }
     }
     .input-container label {
         align-self: flex-start; /* align label to the start within its container */
+    }
+    .accordion-buttons {
+        gap: 10px;
+        flex-direction: column;
     }
     .button-round {
         height: 40px;
