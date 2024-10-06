@@ -15,12 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
     var navItems = document.querySelectorAll('.nav-item.has-submenu');
     navItems.forEach(function(item) {
         var link = item.querySelector('.nav-link');
-        link.addEventListener('click', function(event) {
-            if (window.innerWidth <= 810) {
-                event.preventDefault();
-                item.classList.toggle('mobile-submenu-active');
-            }
-        });
+        var submenu = item.querySelector('.submenu');
+        
+        // Only add event listener if submenu exists
+        if (submenu) {
+            link.addEventListener('click', function(event) {
+                if (window.innerWidth <= 810) {
+                    event.preventDefault();
+                    item.classList.toggle('mobile-submenu-active');
+                }
+            });
+        }
     });
 
     // Function to handle scroll event

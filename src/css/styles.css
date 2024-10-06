@@ -150,7 +150,6 @@ h3, h4, h5 {
     transition: height 0.3s ease; /* Smooth height transition */
 }
 
-
 /* Adjust alignment when scrolled or when submenu is open */
 .navbar.scrolled .navbar-container,
 .navbar.submenu-open .navbar-container {
@@ -330,6 +329,13 @@ h3, h4, h5 {
     height: 400px;
     background: linear-gradient(to bottom, #A6B1F1, #004B50);
     z-index: 1;
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: flex-end; /* Aligns children to the bottom */
+    padding: 50px 20px 20px 70px;
+    position: relative; /* If needed for further positioning */
+    color: #D3FFB4;
+    box-sizing: border-box; /* Ensures padding is included in height */
 }
 
 .color-transition {
@@ -386,15 +392,47 @@ a:hover .button-round, a:active .button-round {
 a { color: #D3FFB4; }
 a:hover, a:active { color: #A6B1F1; }
 
-.overlap-header-wide {
-    margin-top: -100px; /* Creates the overlap */
-    min-height: 100px;
-    display: flex;
-    flex-direction: row;
-    padding: 50px 70px 0px 70px;
-    color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
-    background-color: transparent;
+/* Table Styling */
+.transparent-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.transparent-table th, .transparent-table td {
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #D3FFB4;
+    vertical-align: middle;
+
+}
+
+.transparent-table th {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* Padding Between Columns */
+.transparent-table th:not(:last-child), 
+.transparent-table td:not(:last-child) {
+    padding-right: 10px; /* Padding to the right for all columns except the last */
+}
+
+.transparent-table th:not(:first-child),
+.transparent-table td:not(:first-child) {
+    padding-left: 10px; /* Padding to the left for all columns except the first */
+}
+
+/* Bold First Column */
+.transparent-table td:first-child {
+    font-weight: bold;
+    padding-right: 30px; /* Additional right padding for better spacing */
+}
+
+/* Normal Font Weight for All Other Cells */
+.transparent-table td:not(:first-child) {
+    font-weight: normal;
 }
 
 .header-wide {
@@ -406,7 +444,7 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
-.text-wide {
+.callout-action {
     padding: 80px;
     color: #004B50;
     background-color: #D3FFB4;
@@ -418,17 +456,17 @@ a:hover, a:active { color: #A6B1F1; }
     box-sizing: border-box; /* Includes padding in the height calculation */
 }
 
-.text-wide .button-round {
+.callout-action .button-round {
     background-color: #004B50;
     color: #D3FFB4;
 }
 
-.text-wide .button-round:hover, .text-wide .button-round:active {
+.callout-action .button-round:hover, .callout-action .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-wide h1, .header-wide h1 {
+.callout-action h1, .header-wide h1 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -447,6 +485,21 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
+.text-wide {
+    display: flex;
+    width: 100%; /* Ensures the row takes full width of its parent */
+    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    flex-direction: column;
+    padding: 50px 70px;
+    color: #D3FFB4;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    background: #004B50;
+}
+
+.content-block {
+    padding: 20px 0; /* 20px top and bottom padding */
+}
+
 .text-columns {
     display: flex;
     flex-direction: row;
@@ -456,18 +509,28 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
-.text-columns .button-round, .image-columns .button-round, .footer-color-transition .lime .button-round {
+.text-wide .button-round, .text-columns .button-round, .image-columns .button-round, .footer-color-transition .lime .button-round {
     background-color: #D3FFB4;
     color: #004B50;
 }
 
-.text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .footer-color-transition .lime .button-round:hover, .footer-color-transition .lime .button-round:active {
+.text-wide .button-round:hover, .text-wide .button-round:active, .text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .footer-color-transition .lime .button-round:hover, .footer-color-transition .lime .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-columns a, .image-columns a, .footer-color-transition .lime a { color: #D3FFB4; }
-.text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .footer-color-transition .lime a:hover, .footer-color-transition .lime a:active { color: #A6B1F1; }
+.text-wide a, .text-columns a, .image-columns a, .footer-color-transition .lime a { color: #D3FFB4; }
+.text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .footer-color-transition .lime a:hover, .footer-color-transition .lime a:active { color: #A6B1F1; }
+
+/* Takes up all of the width space */
+.column-wide {
+    padding: 20px 50px;
+    display: flex;
+    width: 100%; /* Ensures the row takes full width of its parent */
+    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    text-align: left;
+    color: #004B50;
+}
 
 .column-one {
     flex: 1; /* Takes up 1 part of the space */
@@ -660,10 +723,13 @@ a:hover, a:active { color: #A6B1F1; }
         height: 400px;
         width: 300px;
     }
-    .header-wide, .overlap-header-wide {
+    .header-color-transition {
         padding: 30px 20px 0px 20px;
     }
-    .text-wide, .text-columns, .image-columns {
+    .header-wide {
+        padding: 30px 20px 0px 20px;
+    }
+    .callout-action, .text-wide, .text-columns, .image-columns {
         padding: 30px 20px;
     }
     .column-one {
@@ -803,6 +869,7 @@ a:hover, a:active { color: #A6B1F1; }
         width: 100%;
         flex-grow: 1;
         padding: 20px 0;
+        z-index: 2000;
     }
 
     .navbar.mobile-nav-active .navbar-menu {
@@ -889,12 +956,13 @@ a:hover, a:active { color: #A6B1F1; }
         margin-bottom: 10px;
     }
     .header-color-transition {
+        padding: 30px 20px 0px 20px;
         height: 300px;
     }
-    .header-wide, .overlap-header-wide {
+    .header-wide {
         padding: 30px 20px 0px 20px;
     }
-    .text-wide {
+    .callout-action, .text-wide {
         padding: 30px 20px;
     }
     .image-columns {
