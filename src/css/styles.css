@@ -275,6 +275,10 @@ h3, h4, h5 {
 
 /******************/
 /* Content Styles */
+.darkforest-background {
+    background-color: #004B50;
+}
+
 .teaser-image {
     position: fixed;
     top: 0;
@@ -320,6 +324,12 @@ h3, h4, h5 {
     white-space: nowrap; /* Prevents the text from wrapping */
     overflow: hidden; /* Hides any overflow that might occur */
     text-overflow: ellipsis; /* Adds an ellipsis if the text overflows (optional) */
+}
+
+.header-color-transition {
+    height: 400px;
+    background: linear-gradient(to bottom, #A6B1F1, #004B50);
+    z-index: 1;
 }
 
 .color-transition {
@@ -375,6 +385,17 @@ a:hover .button-round, a:active .button-round {
 
 a { color: #D3FFB4; }
 a:hover, a:active { color: #A6B1F1; }
+
+.overlap-header-wide {
+    margin-top: -100px; /* Creates the overlap */
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 50px 70px 0px 70px;
+    color: #D3FFB4;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    background-color: transparent;
+}
 
 .header-wide {
     display: flex;
@@ -639,7 +660,7 @@ a:hover, a:active { color: #A6B1F1; }
         height: 400px;
         width: 300px;
     }
-    .header-wide {
+    .header-wide, .overlap-header-wide {
         padding: 30px 20px 0px 20px;
     }
     .text-wide, .text-columns, .image-columns {
@@ -867,7 +888,10 @@ a:hover, a:active { color: #A6B1F1; }
         font-size: 20px;
         margin-bottom: 10px;
     }
-    .header-wide {
+    .header-color-transition {
+        height: 300px;
+    }
+    .header-wide, .overlap-header-wide {
         padding: 30px 20px 0px 20px;
     }
     .text-wide {
