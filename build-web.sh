@@ -53,6 +53,8 @@ for html in "$WEB_DIR"/*.html; do
   
   # Append timestamp to CSS file reference
   sed -i '' "s|href=\"css/styles.css\"|href=\"css/styles.css?v=$timestamp\"|g" "$html"
+  sed -i '' "s|href=\"js/navbar.js\"|href=\"js/navbar.js?v=$timestamp\"|g" "$html"
+  sed -i '' "s|href=\"js/accordion.js\"|href=\"js/accordion.js?v=$timestamp\"|g" "$html"
 done
 
 # Set permissions

@@ -1,30 +1,68 @@
 document.addEventListener("DOMContentLoaded", function() {
     var navbar = document.querySelector('.navbar');
     var mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    var navItems = document.querySelectorAll('.nav-item.has-submenu');
+    var submenuLinks = document.querySelectorAll('.submenu a');
     var submenuTimeout;
+
+
+
+    function isMobileView() {
+        return window.matchMedia('(max-width: 810px)').matches;
+    }
 
     // Toggle Mobile Navigation Menu
     mobileMenuIcon.addEventListener('click', function() {
         var isActive = navbar.classList.toggle('mobile-nav-active');
-        document.body.classList.toggle('mobile-nav-active');
         mobileMenuIcon.classList.toggle('is-active');
         mobileMenuIcon.setAttribute('aria-expanded', isActive);
+
+        document.body.classList.toggle('mobile-nav-active', isActive);
+
+        // Remove 'mobile-submenu-active' class from all nav items when closing
+        if (!isActive) {
+            navItems.forEach(function(item) {
+                item.classList.remove('mobile-submenu-active');
+            });
+
+            // Remove 'submenu-open' class from navbar
+            navbar.classList.remove('submenu-open');
+        }
     });
 
     // Toggle Submenus on Mobile
-    var navItems = document.querySelectorAll('.nav-item.has-submenu');
     navItems.forEach(function(item) {
         var link = item.querySelector('.nav-link');
         var submenu = item.querySelector('.submenu');
-        
-        // Only add event listener if submenu exists
+
         if (submenu) {
             link.addEventListener('click', function(event) {
-                if (window.innerWidth <= 810) {
+                if (isMobileView()) {
                     event.preventDefault();
                     item.classList.toggle('mobile-submenu-active');
                 }
             });
+        }
+    });
+
+    // Close mobile menu when a submenu link is clicked
+    submenuLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            if (isMobileView()) {
+                // Do not prevent default; allow navigation to proceed
+                // Simulate a click on the mobile menu icon to close the menu
+                mobileMenuIcon.click();
+            }
+        });
+    });
+
+    // Reset menu state on resize
+    window.addEventListener('resize', function() {
+        if (!isMobileView()) {
+            // Close mobile menu and reset classes if the menu is active
+            if (navbar.classList.contains('mobile-nav-active')) {
+                mobileMenuIcon.click();
+            }
         }
     });
 
@@ -43,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add event listener for scroll event
     window.addEventListener('scroll', handleScroll);
 
-    // Function to show submenus
+    // Function to show submenus (for desktop hover, if applicable)
     function showSubmenus() {
         clearTimeout(submenuTimeout);
         navbar.classList.add('submenu-open');
     }
 
-    // Function to hide submenus
+    // Function to hide submenus (for desktop hover, if applicable)
     function hideSubmenus() {
         clearTimeout(submenuTimeout);
         submenuTimeout = setTimeout(function() {
@@ -57,8 +95,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 200);
     }
 
-    // Event listeners for submenu handling
+    // Event listeners for submenu handling on desktop (if applicable)
     var navLinksContainer = document.querySelector('.nav-links-container');
-    navLinksContainer.addEventListener('mouseenter', showSubmenus);
-    navLinksContainer.addEventListener('mouseleave', hideSubmenus);
+    if (navLinksContainer) {
+        navLinksContainer.addEventListener('mouseenter', showSubmenus);
+        navLinksContainer.addEventListener('mouseleave', hideSubmenus);
+    }
 });

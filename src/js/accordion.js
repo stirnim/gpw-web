@@ -20,13 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Optional: Scroll to the expanded section
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Optional: Set focus to the heading inside the expanded section
-        var heading = section.querySelector('.accordion-content-column h1');
-        if (heading) {
-            heading.setAttribute('tabindex', '-1'); // Make it focusable
-            heading.focus();
-        }
     }
 
     // Function to handle the collapse and scroll back to the button

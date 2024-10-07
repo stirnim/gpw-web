@@ -60,7 +60,7 @@ h3, h4, h5 {
     width: 100%; /* Stretches across the viewport */
     z-index: 1000;
     background: transparent;
-    transition: background 0.3s ease, height 0.3s ease;
+    transition: none !important;
     font-size: 18px;
     overflow: visible;
 }
