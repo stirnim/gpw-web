@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
             s.classList.remove('expanded');
             var btn = s.querySelector('.accordion-toggle-button');
             var link = s.querySelector('.accordion-toggle-link');
-            if (btn) btn.textContent = 'Mehr Infos';
+            if (btn) {
+                var img = btn.querySelector('img');
+                if (img) img.setAttribute('src', 'images/expand_icon_darkforest.svg');
+                btn.setAttribute('aria-label', 'Mehr Infos');
+            }
             if (link) link.setAttribute('aria-expanded', 'false');
         });
 
@@ -15,17 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
         section.classList.add('expanded');
         var toggleButton = section.querySelector('.accordion-toggle-button');
         var toggleLink = section.querySelector('.accordion-toggle-link');
-        if (toggleButton) toggleButton.textContent = 'Weniger Infos';
+        if (toggleButton) {
+            var img = toggleButton.querySelector('img');
+            if (img) img.setAttribute('src', 'images/collapse_icon_darkforest.svg');
+            toggleButton.setAttribute('aria-label', 'Weniger Infos');
+        }
         if (toggleLink) toggleLink.setAttribute('aria-expanded', 'true');
 
         // Optional: Scroll to the expanded section
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // Function to handle the collapse and scroll back to the button
     function collapseSection(section, toggleButton) {
         section.classList.remove('expanded');
-        if (toggleButton) toggleButton.textContent = 'Mehr Infos';
+        if (toggleButton) {
+            var img = toggleButton.querySelector('img');
+            if (img) img.setAttribute('src', 'images/expand_icon_darkforest.svg');
+            toggleButton.setAttribute('aria-label', 'Mehr Infos');
+        }
         var toggleLink = section.querySelector('.accordion-toggle-link');
         if (toggleLink) toggleLink.setAttribute('aria-expanded', 'false');
 
@@ -95,7 +106,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 s.classList.remove('expanded');
                 var btn = s.querySelector('.accordion-toggle-button');
                 var link = s.querySelector('.accordion-toggle-link');
-                if (btn) btn.textContent = 'Mehr Infos';
+                if (btn) {
+                    var img = btn.querySelector('img');
+                    if (img) img.setAttribute('src', 'images/expand_icon_darkforest.svg');
+                    btn.setAttribute('aria-label', 'Mehr Infos');
+                }
                 if (link) link.setAttribute('aria-expanded', 'false');
             });
         }

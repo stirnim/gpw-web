@@ -682,6 +682,7 @@ a:hover, a:active { color: #A6B1F1; }
 .accordion-buttons {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px; /* Optional: Adjust the spacing between buttons */
     margin-top: 10px; /* Adjust as needed for spacing above buttons */
 }
@@ -689,6 +690,35 @@ a:hover, a:active { color: #A6B1F1; }
 .accordion-buttons .button-round {
     width: auto;
     margin: 5px auto; /* Centers the button horizontally */
+}
+
+/* Style the accordion toggle button */
+.accordion-toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    background: #D3FFB4;
+    border-radius: 50%; /* Makes the button circular */
+    cursor: pointer;
+    box-sizing: border-box; /* Include border in total width and height */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Change background color on hover */
+.accordion-toggle-button:hover {
+    background-color: #A6B1F1; /* Background color on hover */
+}
+
+/* Style the image inside the button */
+.accordion-toggle-button img {
+    width: calc(100% - 6px); /* Adjust for border (3px on each side) */
+    height: calc(100% - 6px);
+    object-fit: contain; /* Ensure the image scales correctly */
+    display: block;
 }
 
 .footer-color-transition {
@@ -775,7 +805,7 @@ a:hover, a:active { color: #A6B1F1; }
 
 .input-field {
     min-width: 300px;
-    height: 40px;
+    height: 36px;
     background: #A6B1F1;
     opacity: 1;
     border: 2px solid #004B50;
@@ -1103,10 +1133,6 @@ a:hover, a:active { color: #A6B1F1; }
     .input-container label {
         align-self: flex-start; /* align label to the start within its container */
     }
-    .accordion-buttons {
-        gap: 10px;
-        flex-direction: column;
-    }
     .button-round {
         height: 36px;
         line-height: 36px;
@@ -1114,6 +1140,10 @@ a:hover, a:active { color: #A6B1F1; }
         font-size: 16px;
         font-weight: normal;
         border-radius: 18px; /* Full circle on the sides */
+    }
+    .accordion-toggle-button {
+        width: 36px;
+        height: 36px;
     }
     .footer-border-box {
         text-align: center; /* Horizontally center content within the column */
