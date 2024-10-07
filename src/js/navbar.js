@@ -3,12 +3,17 @@ document.addEventListener("DOMContentLoaded", function() {
     var mobileMenuIcon = document.querySelector('.mobile-menu-icon');
     var navItems = document.querySelectorAll('.nav-item.has-submenu');
     var submenuLinks = document.querySelectorAll('.submenu a');
+    var navLinksContainer = document.querySelector('.nav-links-container');
     var submenuTimeout;
 
 
 
     function isMobileView() {
         return window.matchMedia('(max-width: 810px)').matches;
+    }
+
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints;
     }
 
     // Toggle Mobile Navigation Menu
@@ -65,6 +70,45 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+
+    // Event listeners for submenu handling on desktop and touch devices
+    if (navLinksContainer) {
+        if (isTouchDevice()) {
+            // For touch devices, use click events
+            navItems.forEach(function(item) {
+                var link = item.querySelector('.nav-link');
+                var submenu = item.querySelector('.submenu');
+
+                if (submenu) {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        // Close any other open submenus
+                        navItems.forEach(function(navItem) {
+                            if (navItem !== item) {
+                                navItem.classList.remove('submenu-active');
+                            }
+                        });
+                        // Toggle the submenu
+                        item.classList.toggle('submenu-active');
+                    });
+                }
+            });
+
+            // Close submenu when clicking outside
+            document.addEventListener('click', function(event) {
+                var isClickInside = navbar.contains(event.target);
+                if (!isClickInside) {
+                    navItems.forEach(function(item) {
+                        item.classList.remove('submenu-active');
+                    });
+                }
+            });
+        } else {
+            // For non-touch devices, use hover events
+            navLinksContainer.addEventListener('mouseenter', showSubmenus);
+            navLinksContainer.addEventListener('mouseleave', hideSubmenus);
+        }
+    }
 
     // Function to handle scroll event
     function handleScroll() {
