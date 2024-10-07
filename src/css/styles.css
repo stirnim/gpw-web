@@ -25,7 +25,7 @@ html {
 body {
     font-family: 'ABCFavorit', Tahoma, Verdana, Arial;
     font-weight: normal;
-    font-size: min(24px, 4vw);
+    font-size: min(20px, 4vw);
     color: #D3FFB4;
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5 strong {
 
 h1 {
     margin-top: 0;
-    font-size: min(60px, 6vw);
+    font-size: min(50px, 5vw);
 }
 h3, h4, h5 {
     margin-top: 10px;
@@ -351,16 +351,16 @@ h3, h4, h5 {
 
 /* Default button style. Color is adjusted in the different text-XXX style definitions */
 .button-round {
-    height: 48px; /* Fixed height */
-    line-height: 48px; /* Aligns text vertically */
+    height: 42px; /* Fixed height */
+    line-height: 42px; /* Aligns text vertically */
     padding: 0 40px; /* Padding on left and right for text */
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.05em; /* Increases letter spacing slightly */
     background-color: #004B50; /* Default background color */
     color: #D3FFB4; /* Default font color */
     border: none; /* No borders */
-    border-radius: 24px; /* Full circle on the sides */
+    border-radius: 21px; /* Full circle on the sides */
     outline: none; /* Removes focus outline */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and background */
@@ -582,7 +582,7 @@ a:hover, a:active { color: #A6B1F1; }
     display: flex;         /* Enables flexbox properties */
     justify-content: center; /* Centers content horizontally */
     align-items: center;   /* Centers content vertically */
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     text-transform: uppercase; /* Converts text to uppercase */
     background-color: #004B50;
@@ -596,7 +596,7 @@ a:hover, a:active { color: #A6B1F1; }
     align-items: flex-start; /* Aligns children to the start (left) of the container */
 }
 
-.column-one p, .column-two p {
+.column-one p, .column-two p, .content-block p {
     margin: 0 0 20px 0; /* top right bottom left margin */
 }
 
@@ -624,7 +624,7 @@ a:hover, a:active { color: #A6B1F1; }
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     text-transform: uppercase;
     background-color: #004B50; /* Default background */
@@ -800,6 +800,12 @@ a:hover, a:active { color: #A6B1F1; }
         font-size: 20px;
         margin-bottom: 10px;
     }
+    .accordion-section .accordion-icon {
+        width: 150px;          /* Diameter of the circle */
+        height: 150px;         /* Diameter of the circle */
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
     .column-one-image {
         height: 400px;
         width: 300px;
@@ -823,7 +829,10 @@ a:hover, a:active { color: #A6B1F1; }
         padding: 30px 20px 0 20px;
     }
     .footer-box, .footer-row {
-        padding: 20px 10px;
+        padding: 0 10px;
+    }
+    .footer-row:last-of-type {
+        padding-bottom: 20px;
     }
 }
 
@@ -873,10 +882,10 @@ a:hover, a:active { color: #A6B1F1; }
         font-size: 80px;
     }
     h1 {
-        font-size: 60px;
+        font-size: 50px;
     }
     body {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
@@ -964,7 +973,7 @@ a:hover, a:active { color: #A6B1F1; }
     .nav-link {
         width: 280px;
         height: 50px;
-        font-size: 24px;
+        font-size: 20px;
         border-radius: 25px; /* Half of height for a full curve */
         margin: 5px 0;
     }
@@ -981,7 +990,7 @@ a:hover, a:active { color: #A6B1F1; }
         background-color: #D3FFB4;
         color: #004B50;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 20px;
         border-radius: 25px;
     }
 
@@ -1036,6 +1045,15 @@ a:hover, a:active { color: #A6B1F1; }
         font-size: 20px;
         margin-bottom: 10px;
     }
+    .accordion-section .accordion-icon {
+        width: 150px;          /* Diameter of the circle */
+        height: 150px;         /* Diameter of the circle */
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .accordion-section .accordion-content-column {
+        padding: 0 0;
+    }
     .header-color-transition {
         padding: 30px 20px 0px 20px;
         height: 300px;
@@ -1060,7 +1078,7 @@ a:hover, a:active { color: #A6B1F1; }
         justify-content: flex-start;
     }
     .column-two {
-        padding: 10px 10px;
+        padding: 10px 0;
         flex: 1 0 100%; /* Each column takes 100% of the text-area width */
         justify-content: flex-start;
     }
@@ -1068,10 +1086,13 @@ a:hover, a:active { color: #A6B1F1; }
         padding: 30px 20px 0 20px;
     }
     .footer-box, .footer-row {
-        padding: 20px 10px;
+        padding: 0 10px;
         flex-direction: column;
         justify-content: center; /* Centers children horizontally if there's extra space */
         align-items: center; /* Horizontally center content within the column */
+    }
+    .footer-row:last-of-type {
+        padding-bottom: 20px;
     }
     .input-container {
         width: 100%;
@@ -1087,12 +1108,12 @@ a:hover, a:active { color: #A6B1F1; }
         flex-direction: column;
     }
     .button-round {
-        height: 40px;
-        line-height: 40px;
+        height: 36px;
+        line-height: 36px;
         padding: 0 40px; /* Padding on left and right for text */
-        font-size: 18px;
+        font-size: 16px;
         font-weight: normal;
-        border-radius: 20px; /* Full circle on the sides */
+        border-radius: 18px; /* Full circle on the sides */
     }
     .footer-border-box {
         text-align: center; /* Horizontally center content within the column */
