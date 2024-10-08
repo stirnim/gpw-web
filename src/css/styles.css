@@ -546,31 +546,87 @@ a:hover, a:active { color: #A6B1F1; }
     margin: 10px auto 0;
 }
 
-.column-one-image {
-    width: 100%;
-    height: 450px;
-    width: 300px;
-    background-size: cover; /* Ensures the background image covers the entire div */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-    position: relative;
-    overflow: hidden; /* Ensures child elements don't overflow the container */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    display: flex;
-    flex-direction: column; /* Stacks child elements vertically */
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: center; /* Centers child elements vertically */
-    box-sizing: border-box; /* Ensures padding is included in the total size */
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background to improve text visibility */
+
+/* Make the entire image clickable and remove text decoration */
+.column-one-link {
+    text-decoration: none; /* Remove underline from the link */
+    display: block;        /* Ensure the link takes up the full size of its container */
 }
 
-/* Hover effect for the column-one-image */
-.image-columns .column-one-image {
-    /* Existing styles */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+/* Image Container */
+.column-one-image {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer; /* Change cursor to pointer on hover */
+    overflow: hidden;
+    border-radius: 5px; /* Optional: Smooth corners */
 }
-.image-columns .column-one-image:hover {
-    box-shadow: 0 0 20px 5px rgba(166, 177, 241, 0.7); /* Adjust color and size as needed */
+
+/* Pseudo-element for the background image with grayscale filter */
+.column-one-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* Inherit the background image from parent */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%); /* Apply grayscale by default */
+    transition: filter 0.5s ease-in-out; /* Smooth transition for grayscale */
+    z-index: 1; /* Place it below the overlays */
+}
+
+/* Ensure the background image is the first layer */
+.column-one-image {
+    background-image: none; /* Remove the background image from the main div */
+}
+
+/* Hover Effect: Remove Grayscale and Apply Diagonal Color Transition */
+.column-one-link:hover .column-one-image::before {
+    filter: grayscale(0%); /* Remove grayscale on hover */
+    /* Optional: Add transition for diagonal reveal if needed */
+}
+
+/* Overlay in the Center */
+.overlay-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Slightly less than full width for padding */
+    text-align: center; /* Center the text */
+    color: #D3FFB4; /* Desired font color */
+    font-size: 20px;
+    text-transform: uppercase; /* Converts text to uppercase */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 15px 0; /* Adequate padding */
+    box-sizing: border-box; /* Include padding in width */
+    word-wrap: break-word;
+    white-space: normal;
+    z-index: 2; /* Ensure it is above the pseudo-element */
+}
+
+/* Overlay at the Bottom Left */
+.overlay-bottom-left {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #D3FFB4; /* Desired font color */
+    font-size: 14px; /* Smaller font size */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer; /* Indicate clickability */
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Ensure it is above the pseudo-element */
 }
 
 .column-one-header {
@@ -837,7 +893,7 @@ a:hover, a:active { color: #A6B1F1; }
         margin-bottom: 20px;
     }
     .column-one-image {
-        height: 400px;
+        height: 300px;
         width: 300px;
     }
     .header-color-transition {
