@@ -595,6 +595,18 @@ a:hover, a:active { color: #A6B1F1; }
     /* Optional: Add transition for diagonal reveal if needed */
 }
 
+/* Add Focus and Active States */
+.column-one-link:focus .column-one-image::before,
+.column-one-link:active .column-one-image::before {
+    filter: grayscale(0%); /* Remove grayscale on focus and active */
+}
+
+/* Optional: Add Transition to Smooth the Focus and Active Changes */
+.column-one-link:focus .column-one-image::before,
+.column-one-link:active .column-one-image::before {
+    transition: filter 0.5s ease-in-out;
+}
+
 /* Overlay in the Center */
 .overlay-center {
     position: absolute;
