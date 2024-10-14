@@ -441,7 +441,7 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 .callout-action {
-    padding: 80px;
+    padding: 50px 70px;
     color: #004B50;
     background-color: #D3FFB4;
     display: flex;
