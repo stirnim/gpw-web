@@ -353,7 +353,7 @@ h3, h4, h5 {
 .button-round {
     height: 42px; /* Fixed height */
     line-height: 42px; /* Aligns text vertically */
-    padding: 0 40px; /* Padding on left and right for text */
+    padding: 0 20px; /* Padding on left and right for text */
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0.05em; /* Increases letter spacing slightly */
@@ -1283,7 +1283,7 @@ a:hover, a:active { color: #A6B1F1; }
     .button-round {
         height: 36px;
         line-height: 36px;
-        padding: 0 40px; /* Padding on left and right for text */
+        padding: 0 20px; /* Padding on left and right for text */
         font-size: 16px;
         font-weight: normal;
         border-radius: 18px; /* Full circle on the sides */
