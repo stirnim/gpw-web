@@ -85,7 +85,7 @@ h3, h4, h5 {
 }
 
 .navbar-logo img {
-    height: 131px;
+    height: 100px;
     width: auto;
 }
 
@@ -1068,7 +1068,7 @@ a:hover, a:active { color: #A6B1F1; }
 @media (max-width: 1200px) and (min-width: 811px) {
     /* Adjust the logo height responsively using clamp() */
     .navbar-logo img {
-        height: clamp(80px, 10vw, 131px);
+        height: clamp(60px, 8vw, 100px);
     }
 
     /* Adjust padding responsively */
@@ -1144,7 +1144,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
 
     .navbar-logo img {
-        height: 80px; /* Adjust as necessary */
+        height: 60px; /* Adjust as necessary */
         width: auto;
     }
 
