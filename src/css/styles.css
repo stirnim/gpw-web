@@ -270,7 +270,11 @@ h3, h4, h5 {
     background-position: center;
 }
 
-
+.mobile-social-media {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+}
 
 /******************/
 /* Content Styles */
@@ -963,7 +967,6 @@ a:hover, a:active { color: #A6B1F1; }
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    padding: 20px;
     box-sizing: border-box;
     flex-wrap: wrap;
     font-size: 16px;
@@ -975,6 +978,7 @@ a:hover, a:active { color: #A6B1F1; }
     white-space: nowrap;
     text-align: left;
     margin: 10px;
+    padding-right: 40px;
 }
 
 .footer-column-right {
