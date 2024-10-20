@@ -1186,6 +1186,11 @@ a:hover, a:active { color: #A6B1F1; }
         transition: background-image 0.3s ease; /* Smooth transition */
     }
 
+    /* Change mobile-menu-icon to 'hamburger_icon_lime.svg' on start page when not scrolled and menu is not active */
+    .has-teaser-image .navbar:not(.scrolled):not(.mobile-nav-active) .mobile-menu-icon {
+        background-image: url('../images/hamburger_icon_lime.svg'); /* Start page hamburger icon */
+    }
+
     .navbar.mobile-nav-active .mobile-menu-icon {
         background-image: url('../images/close_icon_darkforest.svg'); /* Close icon */
     }
