@@ -730,7 +730,7 @@ a:hover, a:active { color: #A6B1F1; }
     display: flex;         /* Enables flexbox properties */
     justify-content: center; /* Centers content horizontally */
     align-items: center;   /* Centers content vertically */
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     text-transform: uppercase; /* Converts text to uppercase */
     background-color: #004B50;
