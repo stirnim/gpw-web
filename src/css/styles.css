@@ -108,7 +108,7 @@ h3, h4, h5 {
         if you want the navbar background only during scrolling but not on the top
    use: .navbar .navbar-container
         if you want the navbar background always on */        
-.navbar .navbar-container {
+.navbar.scrolled:not(.submenu-open) .navbar-container {
     background: linear-gradient(
         to top,
         transparent 0%,
