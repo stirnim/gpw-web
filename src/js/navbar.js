@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var navLinksContainer = document.querySelector('.nav-links-container');
     var submenuTimeout;
 
+    // Detect if the page has a .teaser-image section
+    var hasTeaserImage = document.querySelector('.teaser-image') !== null;
 
+    if (hasTeaserImage) {
+        document.body.classList.add('has-teaser-image');
+    }
 
     function isMobileView() {
         return window.matchMedia('(max-width: 810px)').matches;
@@ -112,10 +117,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to handle scroll event
     function handleScroll() {
-        if (window.scrollY > 0) {
-            navbar.classList.add('scrolled');
+        var scrollY = window.scrollY || window.pageYOffset;
+
+        if (hasTeaserImage) {
+            // Get the bottom position of the teaser-image
+            var teaserImage = document.querySelector('.teaser-image');
+            var teaserImageBottom = teaserImage.offsetTop + teaserImage.offsetHeight;
+
+            if (scrollY >= teaserImageBottom) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         } else {
-            navbar.classList.remove('scrolled');
+            // For pages without teaser-image, add 'scrolled' class immediately
+            if (scrollY > 0) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
     }
 

@@ -167,6 +167,29 @@ h3, h4, h5 {
     margin-left: 0; /* Resets margin to align menu next to logo */
 }
 
+/* Hide navbar background when over teaser-image */
+.has-teaser-image .navbar:not(.scrolled):not(.submenu-open):not(.mobile-nav-active) .navbar-container {
+    background: transparent;
+}
+
+/* Hide the navbar-logo when over teaser-image */
+.has-teaser-image .navbar:not(.scrolled):not(.submenu-open):not(.mobile-nav-active) .navbar-logo {
+    display: none;
+}
+
+/* Center navbar-menu when logo is hidden */
+.has-teaser-image .navbar:not(.scrolled):not(.submenu-open):not(.mobile-nav-active) .navbar-menu {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Show navbar-logo when scrolled, submenu is open, or mobile menu is active */
+.has-teaser-image .navbar.scrolled .navbar-logo,
+.has-teaser-image .navbar.submenu-open .navbar-logo,
+.has-teaser-image .navbar.mobile-nav-active .navbar-logo {
+    display: block;
+}
+
 /* Navbar Menu */
 .navbar-menu {
     list-style: none;
@@ -1146,6 +1169,11 @@ a:hover, a:active { color: #A6B1F1; }
         height: 60px; /* Adjust as necessary */
         width: auto;
     }
+
+    /* Ensure mobile-menu-icon remains on the right even if navbar-logo is hidden */
+    .has-teaser-image .navbar:not(.scrolled):not(.submenu-open):not(.mobile-nav-active) .navbar-top {
+        justify-content: flex-end;
+    }    
 
     .mobile-menu-icon {
         display: block;
