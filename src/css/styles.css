@@ -991,7 +991,6 @@ a:hover, a:active { color: #A6B1F1; }
 .footer-top-row, .footer-bottom-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
 }
 
