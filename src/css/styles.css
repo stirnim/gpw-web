@@ -608,18 +608,18 @@ a:hover, a:active { color: #A6B1F1; }
     background: #004B50;
 }
 
-.text-wide .button-round, .text-columns .button-round, .image-columns .button-round, .accordion-section .button-round {
+.text-wide .button-round, .text-columns .button-round {
     background-color: #D3FFB4;
     color: #004B50;
 }
 
-.text-wide .button-round:hover, .text-wide .button-round:active, .text-columns .button-round:hover, .text-columns .button-round:active , .image-columns .button-round:hover, .image-columns .button-round:active, .accordion-section .button-round:hover, .accordion-section .button-round:active {
+.text-wide .button-round:hover, .text-wide .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
 
-.text-wide a, .text-columns a, .image-columns a, .accordion-section a { color: #D3FFB4; }
-.text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active, .image-columns a:hover, .image-columns a:active, .accordion-section a:hover, .accordion-section a:active { color: #A6B1F1; }
+.text-wide a, .text-columns a { color: #D3FFB4; }
+.text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active { color: #A6B1F1; }
 
 /* Takes up all of the width space */
 .column-wide {
@@ -660,68 +660,26 @@ a:hover, a:active { color: #A6B1F1; }
 .column-one-image {
     position: relative;
     width: 310px;
-    height: 310px;
+    height: 465px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer; /* Change cursor to pointer on hover */
     overflow: hidden;
-    border-radius: 5px; /* Optional: Smooth corners */
-}
-
-/* Pseudo-element for the background image with grayscale filter */
-.column-one-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit; /* Inherit the background image from parent */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: grayscale(100%); /* Apply grayscale by default */
-    transition: filter 0.5s ease-in-out; /* Smooth transition for grayscale */
-    z-index: 1; /* Place it below the overlays */
-}
-
-/* Ensure the background image is the first layer */
-.column-one-image {
-    background-image: none; /* Remove the background image from the main div */
-}
-
-/* Hover Effect: Remove Grayscale and Apply Diagonal Color Transition */
-.column-one-link:hover .column-one-image::before {
-    filter: grayscale(0%); /* Remove grayscale on hover */
-    /* Optional: Add transition for diagonal reveal if needed */
-}
-
-/* Add Focus and Active States */
-.column-one-link:focus .column-one-image::before,
-.column-one-link:active .column-one-image::before {
-    filter: grayscale(0%); /* Remove grayscale on focus and active */
-}
-
-/* Optional: Add Transition to Smooth the Focus and Active Changes */
-.column-one-link:focus .column-one-image::before,
-.column-one-link:active .column-one-image::before {
-    transition: filter 0.5s ease-in-out;
 }
 
 /* Overlay in the Center */
-.overlay-center {
+.column-one-image-overlay-center {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%; /* Slightly less than full width for padding */
     text-align: center; /* Center the text */
     color: #D3FFB4; /* Desired font color */
-    font-size: 20px;
+    font-size: 50px;
+    font-weight: bold;
     text-transform: uppercase; /* Converts text to uppercase */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     padding: 15px 0; /* Adequate padding */
     box-sizing: border-box; /* Include padding in width */
     word-wrap: break-word;
@@ -729,19 +687,27 @@ a:hover, a:active { color: #A6B1F1; }
     z-index: 2; /* Ensure it is above the pseudo-element */
 }
 
-/* Overlay at the Bottom Left */
-.overlay-bottom-left {
+/* Overlay at the Bottom */
+.column-one-image-overlay-bottom {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #D3FFB4; /* Desired font color */
-    font-size: 14px; /* Smaller font size */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer; /* Indicate clickability */
-    transition: background-color 0.3s ease;
+    bottom: 50px;
+    display: flex; 
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;   /* Centers content vertically */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
     z-index: 2; /* Ensure it is above the pseudo-element */
+}
+
+.column-one-image-overlay-bottom .button-round {
+    background-color: #A6B1F1;
+    color: #004B50;
+}
+
+.column-one-image-overlay-bottom .button-round:hover, .column-one-image-overlay-bottom .button-round:active {
+    background-color: #D3FFB4;
+    color: #004B50;
 }
 
 .column-one-header {
@@ -1060,7 +1026,7 @@ a:hover, a:active { color: #A6B1F1; }
         margin-bottom: 20px;
     }
     .column-one-image {
-        height: 300px;
+        height: 450px;
         width: 300px;
     }
     .header-color-transition {
