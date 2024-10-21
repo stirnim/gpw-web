@@ -29,3 +29,9 @@ The .text-wide class is suited for broader sections of text or elements that req
 
 ## SVG
 - SVG images have been optimized using https://svgomg.net/
+
+## Images
+To convert an image to greyscale we use Photoshop and the Hue/Saturation Adjustment Layer:
+- Step 1: Go to Layer > New Adjustment Layer -> Hue/Saturation
+- Step 2: In the Hue/Saturation panel, drag the Saturation slider all the way to the left and the Lightness slider to +5
+- Step 3: Export as JPEG
