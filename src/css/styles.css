@@ -520,7 +520,7 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 .content-block {
-    padding: 20px 0; /* 20px top and bottom padding */
+    padding: 0 0 20px 0;
 }
 
 /* Image Container */
@@ -733,7 +733,10 @@ a:hover, a:active { color: #A6B1F1; }
     align-items: flex-start; /* Aligns children to the start (left) of the container */
 }
 
-.column-one p, .column-two p, .content-block p {
+.column-one p, .content-block p {
+    margin: 0 0 20px 0; /* top right bottom left margin */
+}
+.column-two p {
     margin: 0 0 20px 0; /* top right bottom left margin */
 }
 
