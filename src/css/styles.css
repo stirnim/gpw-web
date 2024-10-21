@@ -908,11 +908,11 @@ a:hover, a:active { color: #A6B1F1; }
         height: 450px;
         width: 300px;
     }
-    .header-color-transition {
-        padding: 30px 20px 0px 175px;
-    }
-    .header-wide {
-        padding: 30px 20px 0px 175px;
+    .header-color-transition, .header-wide {
+        padding-top: 30px;
+        padding-right: 20px;
+        padding-bottom: 0px;
+        padding-left: clamp(30px, calc(25.4vw - 175.52px), 175px);
     }
     .text-wide {
         padding-top: 30px;
