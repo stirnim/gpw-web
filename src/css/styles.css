@@ -355,7 +355,7 @@ h3, h4, h5 {
     display: flex; /* Enables Flexbox */
     flex-direction: column; /* Stacks children vertically */
     justify-content: flex-end; /* Aligns children to the bottom */
-    padding: 50px 20px 20px 70px;
+    padding: 50px 20px 20px 200px;
     position: relative; /* If needed for further positioning */
     color: #D3FFB4;
     box-sizing: border-box; /* Ensures padding is included in height */
@@ -461,7 +461,7 @@ a:hover, a:active { color: #A6B1F1; }
 .header-wide {
     display: flex;
     flex-direction: row;
-    padding: 50px 70px 0px 70px;
+    padding: 50px 70px 0px 200px;
     color: #D3FFB4;
     box-sizing: border-box; /* Ensures padding is included in width calculation */
     background: #004B50;
@@ -513,7 +513,7 @@ a:hover, a:active { color: #A6B1F1; }
     width: 100%; /* Ensures the row takes full width of its parent */
     align-items: flex-start; /* Aligns children to the start (left) of the container */
     flex-direction: column;
-    padding: 50px 70px;
+    padding: 50px 200px;
     color: #D3FFB4;
     box-sizing: border-box; /* Ensures padding is included in width calculation */
     background: #004B50;
@@ -602,7 +602,7 @@ a:hover, a:active { color: #A6B1F1; }
 .text-columns {
     display: flex;
     flex-direction: row;
-    padding: 50px 70px;
+    padding: 50px 200px 50px 70px;
     color: #D3FFB4;
     box-sizing: border-box; /* Ensures padding is included in width calculation */
     background: #004B50;
@@ -727,7 +727,7 @@ a:hover, a:active { color: #A6B1F1; }
 
 .column-two {
     flex: 3; /* Takes up 3 parts of the space */
-    padding: 0 25px; /* 0 padding on top and bottom, 25px padding on left and right */
+    padding: 0 0 0 25px; /* 0 padding on top, right and bottom, 25px padding on left */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     align-items: flex-start; /* Aligns children to the start (left) of the container */
@@ -1030,19 +1030,31 @@ a:hover, a:active { color: #A6B1F1; }
         width: 300px;
     }
     .header-color-transition {
-        padding: 30px 20px 0px 20px;
+        padding: 30px 20px 0px 175px;
     }
     .header-wide {
-        padding: 30px 20px 0px 20px;
+        padding: 30px 20px 0px 175px;
     }
-    .callout-action, .text-wide, .text-columns, .image-columns {
+    .text-wide {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: clamp(30px, calc(25.4vw - 175.52px), 175px);
+        padding-right: clamp(30px, calc(25.4vw - 175.52px), 175px);
+    }
+    .text-columns {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: clamp(30px, calc(25.4vw - 175.52px), 175px);
+    }
+    .callout-action, .image-columns {
         padding: 30px 20px;
     }
     .column-one {
         padding: 10px 0;
     }
     .column-two {
-        padding: 10px 10px;
+        padding: 10px 0 10px 10px;
     }
     .footer-color-transition {
         padding: 50px 20px 0 20px;
@@ -1298,7 +1310,7 @@ a:hover, a:active { color: #A6B1F1; }
         align-items: center;
     }
     .text-columns {
-        padding: 30px 20px;
+        padding: 30px 20px 30px 20px;
         flex-direction: column; /* Stack columns vertically */
     }
     .column-one {
