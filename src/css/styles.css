@@ -689,6 +689,65 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 /********************/
+/* Gallery Style */
+/********************/
+
+.gallery-wide {
+    display: flex;
+    justify-content: center;
+    padding: 50px 200px;
+    background: #004B50;
+    box-sizing: border-box;
+    width: 100%;
+    color: #D3FFB4;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-gap: 10px;
+    width: 100%;
+    /* Define 4 columns to match the total grid span of 4 */
+    grid-template-columns: repeat(4, 1fr);
+    box-sizing: border-box;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Styles for landscape images */
+.gallery-grid img.landscape {
+    grid-column: span 2;
+    height: 300px;
+}
+
+/* Styles for portrait images */
+.gallery-grid img.portrait {
+    grid-column: span 1;
+    height: 300px;
+}
+
+@media (max-width: 810px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid img.landscape {
+        grid-column: span 2;
+        height: 175px;
+    }
+
+    .gallery-grid img.portrait {
+        grid-column: span 1;
+        height: 175px;
+    }
+}
+
+
+/********************/
 /* Newsletter Style */
 /********************/
 
@@ -853,7 +912,7 @@ a:hover, a:active { color: #A6B1F1; }
         padding-bottom: 0px;
         padding-left: clamp(30px, calc(25.4vw - 175.52px), 175px);
     }
-    .text-wide {
+    .text-wide, .gallery-wide {
         padding-top: 30px;
         padding-bottom: 30px;
         padding-left: clamp(30px, calc(25.4vw - 175.52px), 175px);
@@ -1108,7 +1167,7 @@ a:hover, a:active { color: #A6B1F1; }
     .header-wide {
         padding: 30px 20px 0px 20px;
     }
-    .callout-action, .text-wide {
+    .callout-action, .text-wide, .gallery-wide {
         padding: 30px 20px;
     }
     .image-wide, .image-wide2 {
