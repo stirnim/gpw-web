@@ -613,7 +613,7 @@ a:hover, a:active { color: #A6B1F1; }
     color: #004B50;
 }
 
-.text-wide .button-round:hover, .text-wide .button-round:active {
+.text-wide .button-round:hover, .text-wide .button-round:active, .text-columns .button-round:hover, .text-columns .button-round:active {
     background-color: #A6B1F1;
     color: #004B50;
 }
