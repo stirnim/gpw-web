@@ -524,79 +524,15 @@ a:hover, a:active { color: #A6B1F1; }
 }
 
 /* Image Container */
-.image-wide, .image-wide2 {
+.image-wide {
     position: relative;
     width: 100%; /* Full width */
-    height: 350px; /* Fixed height as per requirement */
+    height: 600px; /* Fixed height as per requirement */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
     cursor: pointer; /* Change cursor to pointer on hover */
-    border-radius: 5px; /* Optional: Smooth corners */
     overflow: hidden; /* Hide any overflow */
-}
-
-/* Pseudo-element for the grayscale overlay */
-.image-wide::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit; /* Inherit the background image from .image-wide */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: grayscale(100%); /* Apply grayscale by default */
-    transition: filter 0.5s ease-in-out; /* Smooth transition for grayscale */
-    z-index: 1; /* Place it below any potential overlays */
-    
-    /* Diagonal Split: Clip-path to cover 2/5 of the image diagonally */
-    clip-path: polygon(10% 100%, 40% 0%, 100% 0%, 100% 100%);
-    -webkit-clip-path: polygon(10% 100%, 40% 0%, 100% 0%, 100% 100%);
-}
-
-.image-wide2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit; /* Inherit the background image from .image-wide2 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: grayscale(100%); /* Apply grayscale by default */
-    transition: filter 0.5s ease-in-out; /* Smooth transition for grayscale */
-    z-index: 1; /* Place it below any potential overlays */
-    
-    /* Diagonal Split: Clip-path to cover the right side diagonally */
-    clip-path: polygon(60% 100%, 90% 0%, 0% 0%, 0% 100%);
-    -webkit-clip-path: polygon(60% 100%, 90% 0%, 0% 0%, 0% 100%); /* Vendor prefix for Safari */
-    }
-
-/* Remove the background image from the main .image-wide div */
-.image-wide, .image-wide2 {
-    background-image: none;
-}
-
-/* Hover Effect: Remove Grayscale from the pseudo-element */
-.image-wide:hover::before,
-.image-wide:focus::before,
-.image-wide:active::before,
-.image-wide2:hover::before,
-.image-wide2:focus::before,
-.image-wide2:active::before {
-    filter: grayscale(0%); /* Remove grayscale on hover, focus, or active */
-}
-
-/* Optional: Accessibility Focus Styles */
-.image-wide:focus, .image-wide2:focus {
-    outline: 2px solid #D3FFB4; /* Example focus outline */
-    outline-offset: 4px;
 }
 
 .text-columns {
