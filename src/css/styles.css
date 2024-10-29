@@ -1184,8 +1184,8 @@ a:hover, a:active { color: #A6B1F1; }
     .callout-action, .text-wide, .gallery-wide {
         padding: 30px 20px;
     }
-    .image-wide, .image-wide2 {
-        height: 250px; 
+    .image-wide {
+        height: 350px; 
     }
     .image-columns {
         padding: 30px 20px;
