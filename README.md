@@ -4,34 +4,55 @@ Source code of the website https://stage.gp-winterthur.ch/
 
 ## How to Use the CSS Classes
 
-### General Structure:
-- The HTML structure is divided into various sections like header, content blocks, and footer. Each section utilizes specific classes to handle its layout and styling.
+### General Structure
+The HTML structure is divided into various sections, such as the header, content blocks, and footer. Each section uses specific classes for layout and styling.
 
-### Class Definitions:
-- **.teaser-image** and **.logo**: These classes are used in the website's header section to display prominent images and logos correctly across all devices.
-- **.text-columns**, **.column-one**, and **.column-two**: These classes manage the layout of text content in a multi-column format, making it easier to read and visually appealing.
-- **.text-wide**: Used for broader text sections to ensure they are engaging and well-padded.
-- **.button-round**: Applies to buttons, giving them a rounded appearance and interactive feedback like color change on hover or click.
+### Page Styles
+All static HTML files share a common structure within the HTML body. They start with the same navigation block and use the same footer. However, there are two different page content structures: one for the start page and another for all other pages. Below is an illustration of how these two page structures differ:
 
-#### .text-columns
-The .text-columns class is designed for layouts that benefit from a structured, multi-column format. This class is particularly useful when you want to display content in a side-by-side manner, which is ideal for comparing information, organizing different topics neatly, or when you want to present related content that doesn't necessarily flow directly from one paragraph to the next.
+Start page:
+- Navigation block
+- Teaser-image block
+- Color-transition block
+- Header-wide block
+- Any number of content blocks
+- Footer block
 
-#### .text-wide
-The .text-wide class is suited for broader sections of text or elements that require more horizontal space and a focal presence on the page. This class is typically used for key sections of content that need to stand out, such as important announcements, large images, or call-to-action buttons that you want to highlight prominently.
+Other pages:
+- Navigation block
+- Header-color-transition block
+- Any number of content blocks
+- Footer block
 
-### Responsiveness:
-- Media queries are utilized within the CSS to adjust styles according to the screen size. For example, the `.hide-on-mobile` class hides certain elements on smaller screens to maintain a clean and uncluttered mobile experience.
-- Images like sponsor logos are set to adjust in size and arrangement based on the viewport width to ensure that they remain proportionate and visually balanced.
+The navigation block has a different appearance on the start page. This is achieved by making the CSS dependent on the teaser-image block, as well as by utilizing JavaScript.
 
-### Footer Section:
-- The footer uses classes like `.footer-color-transition`, `.footer-box`, and `.footer-row` to organize content and sponsor information attractively and accessibly.
-- Flexbox properties are heavily utilized to align and space elements dynamically based on screen size.
+### Main Content Class Definitions
 
-## SVG
-- SVG images have been optimized using https://svgomg.net/
+Any page can be filled with any number of content blocks. Below is a brief explanation of the main classes of these content blocks:
+
+- **.image-columns**: Used to display multiple images in a column style on desktop or stacked vertically on mobile.
+- **.text-columns**: Used for a two-column format where .column-one highlights the content with a subtitle in a circle and .column-two contains the main content.
+- **.callout-action**: A full-width block in a different background color, with large centered text to make a callout action.
+- **.text-wide**: A full-width content block. Similar to .text-columns, except it has just a single column.
+- **.image-wide**:  A full-width image content block.
+- **.gallery-wide**: A full-width grid layout for an image gallery.
 
 ## Images
-To convert an image to greyscale we use Photoshop and the Hue/Saturation Adjustment Layer:
-- Step 1: Go to Layer > New Adjustment Layer -> Hue/Saturation
-- Step 2: In the Hue/Saturation panel, drag the Saturation slider all the way to the left and the Lightness slider to +5
-- Step 3: Export as JPEG
+
+### SVG
+- SVG images have been optimized using https://svgomg.net/
+
+### Image greyscale
+To convert an image to greyscale, we use Photoshop and the Hue/Saturation Adjustment Layer:
+- Step 1: Go to Layer > New Adjustment Layer > Hue/Saturation.
+- Step 2: In the Hue/Saturation panel, drag the Saturation slider all the way to the left and the Lightness slider to +5.
+- Step 3: Export as JPEG.
+
+## Build and Publish
+
+### Build
+The source code for the website resides in the `src` directory. Use the command **`./build-web.sh`** to build static HTML files that can be directly opened in a web browser. The build files are created in the `web` directory.
+
+### Publish
+To publish the build files from the `web` directory to the web hosting server, use the command **`./sync-web.sh`**. This command requires SSH access to the web hosting platform.
+

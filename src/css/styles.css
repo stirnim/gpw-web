@@ -51,13 +51,14 @@ h3, h4, h5 {
     margin-bottom: 3px;
 }
 
-/*****************/
-/* Navbar Styles */
+/*********************/
+/* Navigation Styles */
+/*********************/
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Stretches across the viewport */
+    width: 100%;
     z-index: 1000;
     background: transparent;
     transition: none !important;
@@ -65,7 +66,6 @@ h3, h4, h5 {
     overflow: visible;
 }
 
-/* Ensure navbar content is above the pseudo-element */
 .navbar * {
     position: relative;
     z-index: 1;
@@ -77,7 +77,7 @@ h3, h4, h5 {
 }
 
 .navbar-logo {
-    flex-shrink: 0; /* Prevent the logo from shrinking too much */
+    flex-shrink: 0;
     padding-top: 10px;
     position: relative;
     margin-right: 0;
@@ -93,21 +93,17 @@ h3, h4, h5 {
     max-width: 1440px; /* Matches the body content width */
     margin: 0 auto;
     padding: 0 50px;
-    box-sizing: border-box; /* Includes padding in width */
+    box-sizing: border-box;
     display: flex;
     align-items: flex-start;
     justify-content: space-between; /* Always space between logo and menu */
-    height: 100%; /* Fills the height of the navbar */
-    position: relative; /* Needed for proper positioning */
-    background: transparent; /* Default background */
-    transition-property: background; /* Only transition background */
+    height: 100%;
+    position: relative;
+    background: transparent;
+    transition-property: background;
 }
 
-/* Navbar Background
-   use: .navbar.scrolled:not(.submenu-open) .navbar-container
-        if you want the navbar background only during scrolling but not on the top
-   use: .navbar .navbar-container
-        if you want the navbar background always on */        
+/* Navbar Background */     
 .navbar.scrolled:not(.submenu-open) .navbar-container {
     background: linear-gradient(
         to top,
@@ -123,7 +119,7 @@ h3, h4, h5 {
 
 /* Remove the scrolled background and apply the submenu background when submenu is open */
 .navbar.submenu-open .navbar-container {
-    background: none; /* Remove any existing background */
+    background: none;
 }
 
 /* Apply the submenu background gradient when submenu is open */
@@ -135,7 +131,7 @@ h3, h4, h5 {
     transform: translateX(-50%);
     width: 100%;
     max-width: 1440px; /* Match the content width */
-    height: clamp(300px, 35vw, 400px); /* Responsive height */
+    height: clamp(300px, 35vw, 400px);
     background: linear-gradient(
         to top,
         transparent 0%,
@@ -145,15 +141,15 @@ h3, h4, h5 {
         rgba(211, 255, 180, 0.7) 70%,
         #D3FFB4 100%
     );
-    z-index: -1; /* Ensure it is behind the content */
-    pointer-events: none; /* Allow interactions with elements above */
-    transition: height 0.3s ease; /* Smooth height transition */
+    z-index: -1;
+    pointer-events: none;
+    transition: height 0.3s ease;
 }
 
 /* Adjust alignment when scrolled or when submenu is open */
 .navbar.scrolled .navbar-container,
 .navbar.submenu-open .navbar-container {
-    justify-content: space-between; /* Space between logo and menu */
+    justify-content: space-between;
 }
 
 /* When the logo is hidden (neither scrolled nor submenu-open) */
@@ -199,13 +195,13 @@ h3, h4, h5 {
     margin: 0;
     padding-top: 30px; /* Same top padding as the logo */
     position: relative;
-    transition: none; /* Remove any transitions */
+    transition: none;
 }
 
 /* Navigation Item */
 .nav-item {
     flex: 1 1 auto; /* Allows nav items to shrink and wrap */
-    margin-left: clamp(10px, 2vw, 20px); /* Responsive margin-left */
+    margin-left: clamp(10px, 2vw, 20px);
     position: relative;
     margin-left: 20px;
 }
@@ -222,7 +218,7 @@ h3, h4, h5 {
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 17.5px; /* Half of height for a full curve */
+    border-radius: 17.5px;
     transition: background-color 0.3s, color 0.3s;
     text-transform: uppercase;
     margin: 0;
@@ -301,6 +297,7 @@ h3, h4, h5 {
 
 /******************/
 /* Content Styles */
+/******************/
 .teaser-image {
     position: fixed;
     top: 0;
@@ -330,35 +327,35 @@ h3, h4, h5 {
     width: 90%;
     height: auto;
     z-index: 2; /* Ensures the logo appears over the image */
-    padding: 0; /* Optional padding around the logo */
-    text-align: center; /* Centers all content within the logo div */
+    padding: 0;
+    text-align: center;
     display: flex;
-    flex-direction: column; /* Stack the image and date vertically */
-    justify-content: center; /* Center content vertically within the logo */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .date {
     font-size: min(80px, 8vw);
     font-weight: bold;
     color: #D3FFB4;
-    padding-top: 20px; /* Add space above the date */
-    white-space: nowrap; /* Prevents the text from wrapping */
-    overflow: hidden; /* Hides any overflow that might occur */
-    text-overflow: ellipsis; /* Adds an ellipsis if the text overflows (optional) */
+    padding-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .header-color-transition {
     height: 400px;
     background: linear-gradient(to bottom, #A6B1F1, #004B50);
     z-index: 1;
-    display: flex; /* Enables Flexbox */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: flex-end; /* Aligns children to the bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 50px 20px 20px 200px;
-    position: relative; /* If needed for further positioning */
+    position: relative;
     color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in height */
+    box-sizing: border-box;
 }
 
 .color-transition {
@@ -378,24 +375,23 @@ h3, h4, h5 {
 
 /* Default button style. Color is adjusted in the different text-XXX style definitions */
 .button-round {
-    height: 42px; /* Fixed height */
-    line-height: 42px; /* Aligns text vertically */
-    padding: 0 20px; /* Padding on left and right for text */
+    height: 42px;
+    line-height: 42px;
+    padding: 0 20px;
     font-size: 18px;
     font-weight: bold;
-    letter-spacing: 0.05em; /* Increases letter spacing slightly */
-    background-color: #004B50; /* Default background color */
-    color: #D3FFB4; /* Default font color */
-    border: none; /* No borders */
-    border-radius: 21px; /* Full circle on the sides */
-    outline: none; /* Removes focus outline */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color and background */
-    /* Following makes sure the button does not span the full width in a flex container */
-    width: auto; /* Ensures the button only uses the width it needs */
+    letter-spacing: 0.05em;
+    background-color: #004B50;
+    color: #D3FFB4;
+    border: none;
+    border-radius: 21px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: auto;
     min-width: 180px; 
-    max-width: 100%; /* Prevents the button from exceeding the container width */
-    margin: 20px auto; /* Centers the button horizontally */
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .button-round:hover, .button-round:active {
@@ -404,12 +400,12 @@ h3, h4, h5 {
 }
 
 a .button-round {
-    text-decoration: none; /* Ensures no underline appears */
-    color: inherit; /* Inherits color from the button class */
+    text-decoration: none;
+    color: inherit;
 }
 
 a:hover .button-round, a:active .button-round {
-    /* Preserve your hover and active styles */
+    /* Preserve hover and active styles */
 }
 
 a { color: #D3FFB4; }
@@ -436,7 +432,6 @@ a:hover, a:active { color: #A6B1F1; }
     vertical-align: middle;
 }
 
-/* Padding Between Columns */
 .transparent-table th:not(:last-child), 
 .transparent-table td:not(:last-child) {
     padding-right: 10px; /* Padding to the right for all columns except the last */
@@ -463,7 +458,7 @@ a:hover, a:active { color: #A6B1F1; }
     flex-direction: row;
     padding: 50px 70px 0px 200px;
     color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    box-sizing: border-box;
     background: #004B50;
 }
 
@@ -472,11 +467,11 @@ a:hover, a:active { color: #A6B1F1; }
     color: #004B50;
     background-color: #D3FFB4;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center;     /* Centers content horizontally */
-    text-align: center;  /* Centers text lines within paragraphs */
-    box-sizing: border-box; /* Includes padding in the height calculation */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .callout-action .button-round {
@@ -504,18 +499,18 @@ a:hover, a:active { color: #A6B1F1; }
     gap: 10px;
     padding: 50px 70px;
     color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    box-sizing: border-box;
     background: #004B50;
 }
 
 .text-wide {
     display: flex;
-    width: 100%; /* Ensures the row takes full width of its parent */
-    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    width: 100%;
+    align-items: flex-start;
     flex-direction: column;
     padding: 50px 200px;
     color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    box-sizing: border-box;
     background: #004B50;
 }
 
@@ -523,16 +518,15 @@ a:hover, a:active { color: #A6B1F1; }
     padding: 0 0 20px 0;
 }
 
-/* Image Container */
 .image-wide {
     position: relative;
-    width: 100%; /* Full width */
-    height: 600px; /* Fixed height as per requirement */
+    width: 100%;
+    height: 600px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer; /* Change cursor to pointer on hover */
-    overflow: hidden; /* Hide any overflow */
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .text-columns {
@@ -540,7 +534,7 @@ a:hover, a:active { color: #A6B1F1; }
     flex-direction: row;
     padding: 50px 200px 50px 70px;
     color: #D3FFB4;
-    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    box-sizing: border-box;
     background: #004B50;
 }
 
@@ -557,19 +551,18 @@ a:hover, a:active { color: #A6B1F1; }
 .text-wide a, .text-columns a { color: #D3FFB4; }
 .text-wide a:hover, .text-wide a:active,  .text-columns a:hover, .text-columns a:active { color: #A6B1F1; }
 
-/* Takes up all of the width space */
 .column-wide {
     padding: 20px 50px;
     display: flex;
-    width: 100%; /* Ensures the row takes full width of its parent */
-    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    width: 100%;
+    align-items: flex-start;
     text-align: left;
     color: #004B50;
 }
 
 .column-one {
     flex: 1; /* Takes up 1 part of the space */
-    padding: 0; /* Padding inside column */
+    padding: 0;
     display: flex;
     flex-direction: column; /* Stacks children vertically */
     align-items: center; /* Horizontally center content within the column */
@@ -585,14 +578,12 @@ a:hover, a:active { color: #A6B1F1; }
     margin: 10px auto 0;
 }
 
-
 /* Make the entire image clickable and remove text decoration */
 .column-one-link {
     text-decoration: none; /* Remove underline from the link */
     display: block;        /* Ensure the link takes up the full size of its container */
 }
 
-/* Image Container */
 .column-one-image {
     position: relative;
     width: 310px;
@@ -600,40 +591,38 @@ a:hover, a:active { color: #A6B1F1; }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    cursor: pointer; /* Change cursor to pointer on hover */
+    cursor: pointer;
     overflow: hidden;
 }
 
-/* Overlay in the Center */
 .column-one-image-overlay-center {
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%; /* Slightly less than full width for padding */
-    text-align: center; /* Center the text */
-    color: #D3FFB4; /* Desired font color */
+    width: 100%;
+    text-align: center;
+    color: #D3FFB4;
     font-size: 50px;
     font-weight: bold;
-    text-transform: uppercase; /* Converts text to uppercase */
-    padding: 15px 0; /* Adequate padding */
-    box-sizing: border-box; /* Include padding in width */
+    text-transform: uppercase;
+    padding: 15px 0;
+    box-sizing: border-box;
     word-wrap: break-word;
     white-space: normal;
-    z-index: 2; /* Ensure it is above the pseudo-element */
+    z-index: 2;
 }
 
-/* Overlay at the Bottom */
 .column-one-image-overlay-bottom {
     position: absolute;
     bottom: 50px;
     display: flex; 
-    justify-content: center; /* Centers content horizontally */
-    align-items: center;   /* Centers content vertically */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    z-index: 2; /* Ensure it is above the pseudo-element */
+    z-index: 2;
 }
 
 .column-one-image-overlay-bottom .button-round {
@@ -652,31 +641,30 @@ a:hover, a:active { color: #A6B1F1; }
     margin-bottom: 30px;
     border-radius: 50%;    /* Makes the shape a circle */
     border: 5px solid #A6B1F1; /* Border color and width */
-    display: flex;         /* Enables flexbox properties */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center;   /* Centers content vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     text-align: center;
-    text-transform: uppercase; /* Converts text to uppercase */
+    text-transform: uppercase;
     background-color: #004B50;
 }
 
 .column-two {
     flex: 3; /* Takes up 3 parts of the space */
-    padding: 0 0 0 25px; /* 0 padding on top, right and bottom, 25px padding on left */
+    padding: 0 0 0 25px;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: flex-start; /* Aligns children to the start (left) of the container */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .column-one p, .content-block p {
-    margin: 0 0 20px 0; /* top right bottom left margin */
+    margin: 0 0 20px 0;
 }
 .column-two p {
-    margin: 0 0 20px 0; /* top right bottom left margin */
+    margin: 0 0 20px 0;
 }
 
-/* Button specific alignment */
 .column-two .button-round {
     align-self: flex-start; /* Only the button will align to the left */
     margin-left: 0; /* Ensures no extra space on the left if previously centered with auto margins */
@@ -767,8 +755,8 @@ a:hover, a:active { color: #A6B1F1; }
 
 .input-container {
     display: flex;
-    flex-direction: column; /* stack elements vertically */
-    align-items: flex-start; /* align elements to the left */
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .input-field {
@@ -777,11 +765,11 @@ a:hover, a:active { color: #A6B1F1; }
     background: #A6B1F1;
     opacity: 1;
     border: 2px solid #004B50;
-    border-radius: 4px; /* Adds a minimal radius to each corner */
+    border-radius: 4px;
     color: #102B35;
     font-size: 16px;
-    outline: none; /* Removes the default focus outline */
-    padding: 0 10px; /* Adds padding on the left and right */
+    outline: none; 
+    padding: 0 10px;
     margin: 5px 0;
 }
 
@@ -796,11 +784,11 @@ a:hover, a:active { color: #A6B1F1; }
 /****************/
 .footer-color-transition {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center;     /* Centers content horizontally */
-    text-align: center;  /* Centers text lines within paragraphs */
-    box-sizing: border-box; /* Includes padding in the height calculation */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
     background: linear-gradient(
         180deg, 
         #004B50 25%, 
@@ -836,16 +824,16 @@ a:hover, a:active { color: #A6B1F1; }
     padding: 0 50px;
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centers children horizontally if there's extra space */
-    align-items: center; /* Horizontally center content within the column */
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    flex: 1 1 auto; /* Flex grow, shrink and basis */
+    flex: 1 1 auto;
     gap: 20px;
 }
 
 .footer-image {
-    max-width: 100%; /* ensures images are not bigger than their container */
-    height: auto;    /* maintains the aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 .footer-section-links {
@@ -909,6 +897,10 @@ a:hover, a:active { color: #A6B1F1; }
     text-align: right;
 }
 
+/***************************/
+/* Media Query Adjustments */
+/***************************/
+/* Media Query for Viewports Between 1380px and 811px */
 @media (max-width: 1380px) and (min-width: 811px) {
     .column-one-header {
         width: 150px;          /* Diameter of the circle */
@@ -957,27 +949,22 @@ a:hover, a:active { color: #A6B1F1; }
 
 /* Media Query for Viewports Between 1200px and 810px */
 @media (max-width: 1200px) and (min-width: 811px) {
-    /* Adjust the logo height responsively using clamp() */
     .navbar-logo img {
         height: clamp(60px, 8vw, 100px);
     }
 
-    /* Adjust padding responsively */
     .navbar-container {
         padding: 0 clamp(20px, 1vw, 50px);
     }
 
-    /* Adjust padding-top of navbar-menu */
     .navbar-menu {
         padding-top: clamp(20px, 2.5vw, 30px);
     }
 
-    /* Adjust margin-left of nav-item */
     .nav-item {
         margin-left: clamp(10px, 2vw, 20px);
     }
 
-    /* Adjust nav-link dimensions and font-size */
     .nav-link {
         width: clamp(100px, 14vw, 170px);
         height: clamp(25px, 3vw, 35px);
@@ -985,7 +972,6 @@ a:hover, a:active { color: #A6B1F1; }
         border-radius: calc(0.5 * clamp(25px, 3vw, 35px));
     }
 
-    /* Adjust submenu link dimensions and font-size */
     .submenu a {
         width: clamp(100px, 14vw, 170px);
         height: clamp(25px, 3vw, 35px);
@@ -995,6 +981,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
 }
 
+/* Media Query for Viewports larger then 1200px */
 /* Override font size for larger screens to cap it */
 @media (min-width: 1200px) {
     .date {
@@ -1027,15 +1014,15 @@ a:hover, a:active { color: #A6B1F1; }
     }
 
     .navbar-top {
-        display: flex; /* Establish flex container */
-        flex-direction: row; /* Align children horizontally */
-        justify-content: space-between; /* Space between logo and icon */
-        width: 100%; /* Stretch to full width */
-        box-sizing: border-box; /* Include padding in width */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .navbar-logo img {
-        height: 60px; /* Adjust as necessary */
+        height: 60px;
         width: auto;
     }
 
@@ -1051,17 +1038,17 @@ a:hover, a:active { color: #A6B1F1; }
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-        background-image: url('../images/hamburger_icon_darkforest.svg'); /* Default hamburger icon */
-        transition: background-image 0.3s ease; /* Smooth transition */
+        background-image: url('../images/hamburger_icon_darkforest.svg');
+        transition: background-image 0.3s ease;
     }
 
     /* Change mobile-menu-icon to 'hamburger_icon_lime.svg' on start page when not scrolled and menu is not active */
     .has-teaser-image .navbar:not(.scrolled):not(.mobile-nav-active) .mobile-menu-icon {
-        background-image: url('../images/hamburger_icon_lime.svg'); /* Start page hamburger icon */
+        background-image: url('../images/hamburger_icon_lime.svg');
     }
 
     .navbar.mobile-nav-active .mobile-menu-icon {
-        background-image: url('../images/close_icon_darkforest.svg'); /* Close icon */
+        background-image: url('../images/close_icon_darkforest.svg');
     }
 
     .navbar.mobile-nav-active.scrolled .navbar-container {
@@ -1069,7 +1056,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
 
     .navbar.mobile-nav-active .navbar-container {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column;
         height: 100vh; /* Fallback */
         height: 100dvh;
         background: linear-gradient(to bottom, #D3FFB4 0%, #004B50 100%);
@@ -1103,7 +1090,7 @@ a:hover, a:active { color: #A6B1F1; }
         width: 280px;
         height: 50px;
         font-size: 20px;
-        border-radius: 25px; /* Half of height for a full curve */
+        border-radius: 25px;
         margin: 5px 0;
     }
 
@@ -1193,7 +1180,7 @@ a:hover, a:active { color: #A6B1F1; }
     }
     .text-columns {
         padding: 30px 20px 30px 20px;
-        flex-direction: column; /* Stack columns vertically */
+        flex-direction: column;
     }
     .column-one {
         padding: 10px 0;
@@ -1217,10 +1204,10 @@ a:hover, a:active { color: #A6B1F1; }
     .button-round {
         height: 36px;
         line-height: 36px;
-        padding: 0 20px; /* Padding on left and right for text */
+        padding: 0 20px;
         font-size: 16px;
         font-weight: normal;
-        border-radius: 18px; /* Full circle on the sides */
+        border-radius: 18px;
     }
     .hide-on-mobile {
         display: none;
@@ -1273,7 +1260,6 @@ a:hover, a:active { color: #A6B1F1; }
     .footer-image {
         max-width: 75%; /* Reduces maximum width */
     }
-
 }
 
 /* Media query for small screens, typically mobile phones */
