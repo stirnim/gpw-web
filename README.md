@@ -1,6 +1,6 @@
 # Grand Prix Winterthur HTML Page
 
-Source code of the website https://stage.gp-winterthur.ch/
+Source code of the website https://dev.gp-winterthur.ch/
 
 ## How to Use the CSS Classes
 
